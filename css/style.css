@@ -412,6 +412,7 @@ body {
   width: 100%;
   height: 100%;
   background: #21282e;
+  background: url("images/banner.jpg") center #000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -436,7 +437,7 @@ body {
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
-  background: #e32d40;
+  background: #646569;
   padding: 5px 10px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -445,7 +446,7 @@ body {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
-  color: #687e91;
+  color: #f7f9f4;
 }
 #subtitle-wrap {
   margin-top: 16px;
