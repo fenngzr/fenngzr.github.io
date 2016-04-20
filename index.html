@@ -75,6 +75,63 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-url-for-file" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/20/url-for-file/" class="article-date">
+  <time datetime="2016-04-20T07:51:57.000Z" itemprop="datePublished">2016-04-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/20/url-for-file/">json文件放在服务器生成url</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<ul>
+<li>将相应的文件放到服务器的某个目录下<pre><code>/User/project/ABC.json
+</code></pre></li>
+<li><p>配置nginx</p>
+<pre><code>location /whaterver {
+        alias /User/project/;
+
+}
+</code></pre><p>-重启nginx</p>
+<pre><code>sudo service nginx restart
+</code></pre><p>-打开浏览器，输入以下地址，即可访问</p>
+<pre><code>www.yourdomain.com/whaterver/ABC.json
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2016/04/20/url-for-file/" data-id="cin8kjf5600032ewwffryvd68" class="article-share-link" data-share="baidu" data-title="json文件放在服务器生成url">Share</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-exec-docker-bash" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/19/exec-docker-bash/" class="article-date">
@@ -97,21 +154,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
+        <a id="more"></a>
+<ul>
 <li><p>进入docker容器</p>
 <pre><code>docker exec -i -t xxx bash
 </code></pre></li>
 <li><p>进入mongo</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/04/19/exec-docker-bash/#more">Read More</a>
-          </p>
-        
+<pre><code>mongo
+</code></pre></li>
+<li>查看数据库<pre><code>show dbs
+</code></pre></li>
+<li>选择数据库<pre><code>use Germany
+</code></pre></li>
+<li>查看表单<pre><code>show collections
+</code></pre></li>
+<li>查看表单内容<pre><code>db.germany.find()
+</code></pre></li>
+<li><p>删除该表单所有数据</p>
+<pre><code>db.germany.remove( { } )
+</code></pre></li>
+<li><p>参考链接：<br><a href="http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm" target="_blank" rel="external">http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm</a><br><a href="https://docs.mongodb.org/manual/reference/method/db.collection.remove/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/method/db.collection.remove/</a></p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/04/19/exec-docker-bash/" data-id="cin8gjq2d0001fnww0yj5elir" class="article-share-link" data-share="baidu" data-title="进入docker管理mongo数据库">Share</a>
+        <a data-url="http://yoursite.com/2016/04/19/exec-docker-bash/" data-id="cin8kjf4r00002ewwwdwn5q3s" class="article-share-link" data-share="baidu" data-title="进入docker管理mongo数据库">Share</a>
       
 
       
@@ -148,19 +218,97 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="登陆vps更新系统"><a href="#登陆vps更新系统" class="headerlink" title="登陆vps更新系统"></a>登陆vps更新系统</h3><pre><code>sudo apt-get update
+        <a id="more"></a>
+<h3 id="登陆vps更新系统"><a href="#登陆vps更新系统" class="headerlink" title="登陆vps更新系统"></a>登陆vps更新系统</h3><pre><code>sudo apt-get update
 </code></pre><h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><ul>
 <li><p>下载nginx官方公钥</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/04/19/install-docker-etc/#more">Read More</a>
-          </p>
-        
+<pre><code>wget http://nginx.org/keys/nginx_signing.key
+</code></pre></li>
+<li><p>检查是否新增了nginx_signing.key文件</p>
+<pre><code>ls
+</code></pre></li>
+<li><p>添加key到vps</p>
+<pre><code>sudo apt-key add nginx_signing.key
+</code></pre></li>
+<li><p>添加官方包源</p>
+<pre><code>sudo vim /etc/apt/sources.list      //add the rep to sources.list
+
+  在文件最下方加入该两行代码，如下：
+
+    deb http://nginx.org/packages/ubuntu/ trusty nginx
+    deb-src http://nginx.org/packages/ubuntu/ trusty nginx
+
+  //Ubuntu版本是14.04，对应的codename为：trusy
+</code></pre></li>
+</ul>
+<pre><code>esc       :x       enter保存并退出
+</code></pre><ul>
+<li><p>同步list里的包索引文件</p>
+<pre><code>sudo apt-get update
+</code></pre></li>
+<li><p>安装nginx</p>
+<pre><code>sudo apt-get install nginx
+</code></pre></li>
+<li><p>检查是否安装完毕</p>
+<pre><code>sudo nginx –v 查看安装的nginx版本
+</code></pre></li>
+</ul>
+<h3 id="安装nvm-nodejs-注意安装的用户权限deploy"><a href="#安装nvm-nodejs-注意安装的用户权限deploy" class="headerlink" title="安装nvm /nodejs    //注意安装的用户权限deploy"></a>安装nvm /nodejs    //注意安装的用户权限deploy</h3><ul>
+<li><p>通过脚本安装nvm，并将包源加进了.profile</p>
+<pre><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+</code></pre></li>
+<li><p>让.profile文件生效</p>
+<pre><code>source ~/.profile
+</code></pre></li>
+<li><p>查看node的所有版本</p>
+<pre><code>nvm ls-remote  
+</code></pre></li>
+<li><p>安装以5开头的最新node版本</p>
+<pre><code>nvm install v5
+</code></pre></li>
+<li><p>默认使用nodejs的v5版本</p>
+<pre><code>nvm alias default v5
+</code></pre></li>
+</ul>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><ul>
+<li><p>直接使用apt-get包管理工具安装git，以前有个软件叫git，所有用git-core</p>
+<pre><code>sudo apt-get install git-core
+</code></pre></li>
+</ul>
+<h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><ul>
+<li><p>添加官方包源</p>
+<pre><code>sudo vim /etc/apt/sources.list.d/docker.list
+
+deb https://apt.dockerproject.org/repo ubuntu-trusty main
+</code></pre></li>
+<li><p>添加官方GPG key</p>
+<pre><code>sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+</code></pre></li>
+<li><p>更新系统</p>
+<pre><code>sudo apt-get update
+</code></pre></li>
+<li><p>安装docker</p>
+<pre><code>sudo apt-get install docker-engine
+</code></pre></li>
+<li><p>查看版本</p>
+<pre><code>docker -version
+</code></pre></li>
+<li><p>附注：docker的卸载</p>
+<pre><code>https://nurmrony.wordpress.com/2015/05/06/uninstall-docker-from-ubuntu-14-04/docker的卸载
+</code></pre></li>
+</ul>
+<h3 id="docker下跑nodejs"><a href="#docker下跑nodejs" class="headerlink" title="docker下跑nodejs"></a>docker下跑nodejs</h3><pre><code>sudo docker ps -a
+sudo docker run -it node:5 node -v
+</code></pre><h3 id="docker下跑mongoDB"><a href="#docker下跑mongoDB" class="headerlink" title="docker下跑mongoDB"></a>docker下跑mongoDB</h3><pre><code>sudo docker run --name some-mongo -d mongo
+sudo docker ps -a
+sudo docker stop some-mongo
+sudo docker rm some-mongo
+</code></pre>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2016/04/19/install-docker-etc/" data-id="cin8gjq260000fnwwhyy26xpc" class="article-share-link" data-share="baidu" data-title="安装docker/nginx/nodejs/git/mongodb">Share</a>
+        <a data-url="http://yoursite.com/2016/04/19/install-docker-etc/" data-id="cin8kjf4y00012ewwi7x038tf" class="article-share-link" data-share="baidu" data-title="安装docker/nginx/nodejs/git/mongodb">Share</a>
       
 
       
@@ -186,7 +334,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/">nvm</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/">mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/">nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -195,7 +343,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/nginx/" style="font-size: 20px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a>
     </div>
   </div>
 
@@ -204,7 +352,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -214,6 +362,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/04/20/url-for-file/">json文件放在服务器生成url</a>
+          </li>
         
           <li>
             <a href="/2016/04/19/exec-docker-bash/">进入docker管理mongo数据库</a>
