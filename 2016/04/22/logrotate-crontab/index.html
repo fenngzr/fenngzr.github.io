@@ -3,17 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: nvm | Fenng@1Q84</title>
+  <title>Nginx日志的切割转移 | Fenng@1Q84</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fenng@1Q84">
-<meta property="og:url" content="http://yoursite.com/tags/nvm/index.html">
+  <meta name="description" content="情景：一台服务器上，nginx日志以每天几G速度的增长
+
+需求：将nginx日志每日切割压缩并转移
+
+方法：利用linux系统自带的logrotate、crontab来实现。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx日志的切割转移">
+<meta property="og:url" content="http://yoursite.com/2016/04/22/logrotate-crontab/index.html">
 <meta property="og:site_name" content="Fenng@1Q84">
-<meta property="og:description">
+<meta property="og:description" content="情景：一台服务器上，nginx日志以每天几G速度的增长
+
+需求：将nginx日志每日切割压缩并转移
+
+方法：利用linux系统自带的logrotate、crontab来实现。">
+<meta property="og:updated_time" content="2016-04-22T08:32:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fenng@1Q84">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Nginx日志的切割转移">
+<meta name="twitter:description" content="情景：一台服务器上，nginx日志以每天几G速度的增长
+
+需求：将nginx日志每日切割压缩并转移
+
+方法：利用linux系统自带的logrotate、crontab来实现。">
   
     <link rel="alternate" href="/atom.xml" title="Fenng@1Q84" type="application/atom+xml">
   
@@ -66,39 +79,61 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/19/install-docker-etc/" class="archive-article-date">
-  <time datetime="2016-04-19T08:04:27.000Z" itemprop="datePublished">Apr 19</time>
+        <section id="main"><article id="post-logrotate-crontab" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/22/logrotate-crontab/" class="article-date">
+  <time datetime="2016-04-22T03:47:02.000Z" itemprop="datePublished">2016-04-22</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/19/install-docker-etc/">安装docker/nginx/nodejs/git/mongodb</a>
+    <h1 class="article-title" itemprop="name">
+      Nginx日志的切割转移
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>情景：一台服务器上，nginx日志以每天几G速度的增长</p>
+</li>
+<li><p>需求：将nginx日志每日切割压缩并转移</p>
+</li>
+<li><p>方法：利用linux系统自带的logrotate、crontab来实现。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/22/logrotate-crontab/" data-id="cincqwwsk0003gmww16l0hxgs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/crontab/">crontab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/logrotate/">logrotate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/20/url-for-file/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">json文件放在服务器生成url</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
