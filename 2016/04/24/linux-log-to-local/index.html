@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Fenng@1Q84</title>
+  <title>服务器日志导出至本地 | Fenng@1Q84</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fenng@1Q84">
-<meta property="og:url" content="http://zhiru.tech/index.html">
+  <meta name="description" content="最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：1.使用SSH登录不上服务器（不会弹出密码输入栏）2.DNS解析超时3.不定时出现无法连接的情况，之后会自行恢复正常
+通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。问题整理：
+将虚拟机下/var/下的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器日志导出至本地">
+<meta property="og:url" content="http://zhiru.tech/2016/04/24/linux-log-to-local/index.html">
 <meta property="og:site_name" content="Fenng@1Q84">
-<meta property="og:description">
+<meta property="og:description" content="最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：1.使用SSH登录不上服务器（不会弹出密码输入栏）2.DNS解析超时3.不定时出现无法连接的情况，之后会自行恢复正常
+通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。问题整理：
+将虚拟机下/var/下的">
+<meta property="og:updated_time" content="2016-04-24T12:30:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fenng@1Q84">
-<meta name="twitter:description">
+<meta name="twitter:title" content="服务器日志导出至本地">
+<meta name="twitter:description" content="最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：1.使用SSH登录不上服务器（不会弹出密码输入栏）2.DNS解析超时3.不定时出现无法连接的情况，之后会自行恢复正常
+通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。问题整理：
+将虚拟机下/var/下的">
   
     <link rel="alternate" href="/atom.xml" title="Fenng@1Q84" type="application/atom+xml">
   
@@ -66,55 +73,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/24/hello-world/" class="article-date">
-  <time datetime="2016-04-24T12:30:17.000Z" itemprop="datePublished">2016-04-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhiru.tech/2016/04/24/hello-world/" data-id="cinfrtbe10001slww6pboeej4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
- 
-
-  
-    <article id="post-linux-log-to-local" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-linux-log-to-local" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/24/linux-log-to-local/" class="article-date">
   <time datetime="2016-04-24T10:37:37.000Z" itemprop="datePublished">2016-04-24</time>
@@ -127,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/linux-log-to-local/">服务器日志导出至本地</a>
+    <h1 class="article-title" itemprop="name">
+      服务器日志导出至本地
     </h1>
   
 
@@ -140,12 +99,26 @@
 <ul>
 <li>最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：<br><code>1.使用SSH登录不上服务器（不会弹出密码输入栏）</code><br><code>2.DNS解析超时</code><br><code>3.不定时出现无法连接的情况，之后会自行恢复正常</code></li>
 <li>通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。<h3 id="问题整理："><a href="#问题整理：" class="headerlink" title="问题整理："></a>问题整理：</h3></li>
-<li>将虚拟机下/var/下的所有log，打包并导出至本地，通过邮件提供给微软工程师
-        
-          <p class="article-more-link">
-            <a href="/2016/04/24/linux-log-to-local/#more">Read More</a>
-          </p>
-        
+<li>将虚拟机下/var/下的所有log，打包并导出至本地，通过邮件提供给微软工程师<a id="more"></a>
+<h3 id="解决思路分三步"><a href="#解决思路分三步" class="headerlink" title="解决思路分三步:"></a>解决思路分三步:</h3><h4 id="（1）ssh登陆"><a href="#（1）ssh登陆" class="headerlink" title="（1）ssh登陆"></a>（1）ssh登陆</h4></li>
+<li>等服务器自动恢复正常后，ssh输入账号密码，登陆成功<h4 id="（2）打包var下的所有log"><a href="#（2）打包var下的所有log" class="headerlink" title="（2）打包var下的所有log"></a>（2）打包var下的所有log</h4></li>
+<li><p>ssh登陆成功之后，找到/var/log目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/<span class="built_in">log</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发现/var/log目录下，日志很多，于是决定将该目录下的所有文件压缩打包为1个文件。</p>
+</li>
+<li>Google到tar.gz格式打包整个目录的代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zcvf archive-name.tar.gz directory-name</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>打包成功。</p>
+<h4 id="（3）导出gz文件至本地"><a href="#（3）导出gz文件至本地" class="headerlink" title="（3）导出gz文件至本地"></a>（3）导出gz文件至本地</h4><ul>
+<li>下载并安装<a href="https://filezilla-project.org/" target="_blank" rel="external">filezilla客户端</a></li>
+<li>打开filezilla客户端，操作顺序：<br><code>1.文件&gt;站点管理器&gt;新站点&gt;常规</code><br><code>2.主机名：公用虚拟 IP (VIP)地址 如 11.11.11.11</code><br><code>3.端口：输入端口号 如22</code><br><code>4.协议：选择“SFTP”</code><br><code>5.登陆类型：正常</code><br><code>6.用户名：密码：</code></li>
+<li>以上内容输入完成后，点击“连接”</li>
+<li>pwd命令查看远程站点当前工作目录</li>
+<li>在该目录下找到文件（log-02-16.tar.gz），双击进行下载<br>找到log-02-16.tar.gz，邮件给微软工程师，问题解决！</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -157,65 +130,30 @@
     </footer>
   </div>
   
-</article>
-
- 
-
+    
+<nav id="article-nav">
   
-    <article id="post-url-for-file" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/24/url-for-file/" class="article-date">
-  <time datetime="2016-04-24T10:31:23.000Z" itemprop="datePublished">2016-04-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2016/04/24/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          Hello World
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/url-for-file/">把文件放至服务器上生成Url</a>
-    </h1>
   
+    <a href="/2016/04/24/url-for-file/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">把文件放至服务器上生成Url</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<ul>
-<li><h4 id="以Json文件为例"><a href="#以Json文件为例" class="headerlink" title="以Json文件为例"></a>以Json文件为例</h4></li>
-<li><h4 id="将文件放至服务器的某一目录下"><a href="#将文件放至服务器的某一目录下" class="headerlink" title="将文件放至服务器的某一目录下"></a>将文件放至服务器的某一目录下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/User/project/ABC.json</span><br><span class="line">//比如讲一个名为ABC的Json文件放至project目录下</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2016/04/24/url-for-file/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhiru.tech/2016/04/24/url-for-file/" data-id="cinfrtbed0006slww4m1b01ve" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Url/">Url</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
  
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

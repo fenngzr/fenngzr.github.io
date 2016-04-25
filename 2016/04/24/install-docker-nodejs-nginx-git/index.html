@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>安装Docker/Nginx/Nodejs/Git/Mongodb | Fenng@1Q84</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="检查更新sudo apt-get update安装Nginx
+下载nginx官方公钥wget http://nginx.org/keys/nginx_signing.key">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Docker/Nginx/Nodejs/Git/Mongodb">
+<meta property="og:url" content="http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/index.html">
+<meta property="og:site_name" content="Fenng@1Q84">
+<meta property="og:description" content="检查更新sudo apt-get update安装Nginx
+下载nginx官方公钥wget http://nginx.org/keys/nginx_signing.key">
+<meta property="og:updated_time" content="2016-04-24T12:30:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装Docker/Nginx/Nodejs/Git/Mongodb">
+<meta name="twitter:description" content="检查更新sudo apt-get update安装Nginx
+下载nginx官方公钥wget http://nginx.org/keys/nginx_signing.key">
+  
+    <link rel="alternate" href="/atom.xml" title="Fenng@1Q84" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Fenng@1Q84</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">May the Force be with u.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhiru.tech"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-install-docker-nodejs-nginx-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/24/install-docker-nodejs-nginx-git/" class="article-date">
+  <time datetime="2016-04-24T09:41:28.000Z" itemprop="datePublished">2016-04-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      安装Docker/Nginx/Nodejs/Git/Mongodb
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><h5 id="检查更新"><a href="#检查更新" class="headerlink" title="检查更新"></a>检查更新</h5><code>sudo apt-get update</code><h4 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h4></li>
+<li><h5 id="下载nginx官方公钥"><a href="#下载nginx官方公钥" class="headerlink" title="下载nginx官方公钥"></a>下载nginx官方公钥</h5><code>wget http://nginx.org/keys/nginx_signing.key</code><a id="more"></a></li>
+<li><h5 id="检查是否新增了nginx-signing-key文件"><a href="#检查是否新增了nginx-signing-key文件" class="headerlink" title="检查是否新增了nginx_signing.key文件"></a>检查是否新增了nginx_signing.key文件</h5><code>ls</code></li>
+<li><h5 id="添加key到vps"><a href="#添加key到vps" class="headerlink" title="添加key到vps"></a>添加key到vps</h5><code>sudo apt-key add nginx_signing.key</code></li>
+<li><h5 id="添加官方包源"><a href="#添加官方包源" class="headerlink" title="添加官方包源"></a>添加官方包源</h5><p><code>sudo vim /etc/apt/sources.list</code>     <code>add the rep to sources.list</code></p>
+</li>
+<li><h5 id="在文件最下方加入该两行代码，如下："><a href="#在文件最下方加入该两行代码，如下：" class="headerlink" title="在文件最下方加入该两行代码，如下："></a>在文件最下方加入该两行代码，如下：</h5><p> <code>deb http://nginx.org/packages/ubuntu/ trusty nginx</code><br> <code>deb-src http://nginx.org/packages/ubuntu/ trusty nginx</code><br>  <code>Ubuntu版本是14.04，对应的codename为：trusy</code></p>
+</li>
+<li><h5 id="同步list里的包索引文件"><a href="#同步list里的包索引文件" class="headerlink" title="同步list里的包索引文件"></a>同步list里的包索引文件</h5><code>sudo apt-get update</code></li>
+<li><h5 id="安装Nginx-1"><a href="#安装Nginx-1" class="headerlink" title="安装Nginx"></a>安装Nginx</h5><code>sudo apt-get install nginx</code></li>
+<li><h5 id="检查是否安装完毕"><a href="#检查是否安装完毕" class="headerlink" title="检查是否安装完毕"></a>检查是否安装完毕</h5><code>sudo nginx –v</code><h4 id="安装Nvm-Nodejs"><a href="#安装Nvm-Nodejs" class="headerlink" title="安装Nvm /Nodejs"></a>安装Nvm /Nodejs</h4></li>
+<li><h5 id="注意安装的用户权限"><a href="#注意安装的用户权限" class="headerlink" title="注意安装的用户权限"></a>注意安装的用户权限</h5></li>
+<li><h5 id="通过脚本安装Nvm，并将包源加进了-profile"><a href="#通过脚本安装Nvm，并将包源加进了-profile" class="headerlink" title="通过脚本安装Nvm，并将包源加进了.profile"></a>通过脚本安装Nvm，并将包源加进了.profile</h5><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash</code></li>
+<li><h5 id="让-profile文件生效"><a href="#让-profile文件生效" class="headerlink" title="让.profile文件生效"></a>让.profile文件生效</h5><code>source ~/.profile</code></li>
+<li><h5 id="查看Node的所有版本"><a href="#查看Node的所有版本" class="headerlink" title="查看Node的所有版本"></a>查看Node的所有版本</h5><code>nvm ls-remote</code> </li>
+<li><h5 id="安装以5开头的最新Node版本"><a href="#安装以5开头的最新Node版本" class="headerlink" title="安装以5开头的最新Node版本"></a>安装以5开头的最新Node版本</h5><code>nvm install v5</code></li>
+<li><h5 id="默认使用Nodejs的v5版本"><a href="#默认使用Nodejs的v5版本" class="headerlink" title="默认使用Nodejs的v5版本"></a>默认使用Nodejs的v5版本</h5><code>nvm alias default v5</code><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4></li>
+<li><h5 id="直接使用Apt-get包管理工具安装git，以前有个软件叫git，所有用git-core"><a href="#直接使用Apt-get包管理工具安装git，以前有个软件叫git，所有用git-core" class="headerlink" title="直接使用Apt-get包管理工具安装git，以前有个软件叫git，所有用git-core"></a>直接使用Apt-get包管理工具安装git，以前有个软件叫git，所有用git-core</h5><code>sudo apt-get install git-core</code><h4 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h4></li>
+<li><h5 id="添加官方包源-1"><a href="#添加官方包源-1" class="headerlink" title="添加官方包源"></a>添加官方包源</h5><code>sudo vim /etc/apt/sources.list.d/docker.list</code><br><code>deb https://apt.dockerproject.org/repo ubuntu-trusty main</code></li>
+<li><h5 id="添加官方GPG-key"><a href="#添加官方GPG-key" class="headerlink" title="添加官方GPG key"></a>添加官方GPG key</h5><code>sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D</code></li>
+<li><h5 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h5><code>sudo apt-get update</code><h4 id="安装docker-1"><a href="#安装docker-1" class="headerlink" title="安装docker"></a>安装docker</h4></li>
+<li><h5 id="直接使用Apt-get包管理工具安装Docker"><a href="#直接使用Apt-get包管理工具安装Docker" class="headerlink" title="直接使用Apt-get包管理工具安装Docker"></a>直接使用Apt-get包管理工具安装Docker</h5><code>sudo apt-get install docker-engine</code></li>
+<li><h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><code>docker -version</code></li>
+<li><h5 id="附注：Docker的卸载"><a href="#附注：Docker的卸载" class="headerlink" title="附注：Docker的卸载"></a>附注：Docker的卸载</h5><a href="https://nurmrony.wordpress.com/2015/05/06/uninstall-docker-from-ubuntu-14-04/docker" target="_blank" rel="external">https://nurmrony.wordpress.com/2015/05/06/uninstall-docker-from-ubuntu-14-04/docker</a></li>
+<li><h5 id="docker下跑nodejs"><a href="#docker下跑nodejs" class="headerlink" title="docker下跑nodejs"></a>docker下跑nodejs</h5><code>sudo docker run -it node:5 node -v</code></li>
+<li><h5 id="Docker下跑MongoDB"><a href="#Docker下跑MongoDB" class="headerlink" title="Docker下跑MongoDB"></a>Docker下跑MongoDB</h5><code>sudo docker run --name some-mongo -d mongo</code></li>
+<li><h5 id="创建docker组，并添加用户"><a href="#创建docker组，并添加用户" class="headerlink" title="创建docker组，并添加用户"></a>创建docker组，并添加用户</h5><code>sudo usermod -aG docker fengzr</code></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/" data-id="cinfrtbe90003slww6qpcr3a5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/24/exec-docker-bsh/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          进入Docker管理Mongo数据库
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+ 
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 15px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/24/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/24/linux-log-to-local/">服务器日志导出至本地</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/24/url-for-file/">把文件放至服务器上生成Url</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/24/exec-docker-bsh/">进入Docker管理Mongo数据库</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/24/install-docker-nodejs-nginx-git/">安装Docker/Nginx/Nodejs/Git/Mongodb</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 美味二师兄<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

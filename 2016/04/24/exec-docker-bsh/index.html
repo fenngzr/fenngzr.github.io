@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/4 | Fenng@1Q84</title>
+  <title>进入Docker管理Mongo数据库 | Fenng@1Q84</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fenng@1Q84">
-<meta property="og:url" content="http://zhiru.tech/archives/2016/04/index.html">
+  <meta name="description" content="进入docker容器1docker exec -i -t xxx bash
+
+进入mongo1mongo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进入Docker管理Mongo数据库">
+<meta property="og:url" content="http://zhiru.tech/2016/04/24/exec-docker-bsh/index.html">
 <meta property="og:site_name" content="Fenng@1Q84">
-<meta property="og:description">
+<meta property="og:description" content="进入docker容器1docker exec -i -t xxx bash
+
+进入mongo1mongo">
+<meta property="og:updated_time" content="2016-04-24T12:30:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fenng@1Q84">
-<meta name="twitter:description">
+<meta name="twitter:title" content="进入Docker管理Mongo数据库">
+<meta name="twitter:description" content="进入docker容器1docker exec -i -t xxx bash
+
+进入mongo1mongo">
   
     <link rel="alternate" href="/atom.xml" title="Fenng@1Q84" type="application/atom+xml">
   
@@ -66,82 +73,86 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/24/hello-world/" class="archive-article-date">
-  <time datetime="2016-04-24T12:30:17.000Z" itemprop="datePublished">Apr 24</time>
+        <section id="main"><article id="post-exec-docker-bsh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/24/exec-docker-bsh/" class="article-date">
+  <time datetime="2016-04-24T10:20:55.000Z" itemprop="datePublished">2016-04-24</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/24/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      进入Docker管理Mongo数据库
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/24/linux-log-to-local/" class="archive-article-date">
-  <time datetime="2016-04-24T10:37:37.000Z" itemprop="datePublished">Apr 24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/24/linux-log-to-local/">服务器日志导出至本地</a>
-    </h1>
-  
+        <hr>
+<ul>
+<li><h4 id="进入docker容器"><a href="#进入docker容器" class="headerlink" title="进入docker容器"></a>进入docker容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -i -t xxx bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="进入mongo"><a href="#进入mongo" class="headerlink" title="进入mongo"></a>进入mongo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use Germany</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看表单"><a href="#查看表单" class="headerlink" title="查看表单"></a>查看表单</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show collections</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="查看表单内容"><a href="#查看表单内容" class="headerlink" title="查看表单内容"></a>查看表单内容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.germany.find()</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="删除该表单所有数据"><a href="#删除该表单所有数据" class="headerlink" title="删除该表单所有数据"></a>删除该表单所有数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.germany.remove( &#123; &#125; )</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm" target="_blank" rel="external">http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm</a><br><a href="https://docs.mongodb.org/manual/reference/method/db.collection.remove/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/method/db.collection.remove/</a></p>
+</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/24/url-for-file/" class="archive-article-date">
-  <time datetime="2016-04-24T10:31:23.000Z" itemprop="datePublished">Apr 24</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/24/url-for-file/">把文件放至服务器上生成Url</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhiru.tech/2016/04/24/exec-docker-bsh/" data-id="cinfrtbdu0000slwwlwn0kxj3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/24/url-for-file/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          把文件放至服务器上生成Url
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/24/install-docker-nodejs-nginx-git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">安装Docker/Nginx/Nodejs/Git/Mongodb</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2016/04/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/04/page/2/">__('next') &raquo;</a>
-  </nav>
+ 
 </section>
         
           <aside id="sidebar">

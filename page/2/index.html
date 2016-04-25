@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fenng@1Q84">
-<meta property="og:url" content="http://zhiru.tech/index.html">
+<meta property="og:url" content="http://zhiru.tech/page/2/index.html">
 <meta property="og:site_name" content="Fenng@1Q84">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -68,10 +68,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-exec-docker-bsh" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/04/24/hello-world/" class="article-date">
-  <time datetime="2016-04-24T12:30:17.000Z" itemprop="datePublished">2016-04-24</time>
+    <a href="/2016/04/24/exec-docker-bsh/" class="article-date">
+  <time datetime="2016-04-24T10:20:55.000Z" itemprop="datePublished">2016-04-24</time>
 </a>
     
   </div>
@@ -82,53 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhiru.tech/2016/04/24/hello-world/" data-id="cinfrtbe10001slww6pboeej4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
- 
-
-  
-    <article id="post-linux-log-to-local" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/24/linux-log-to-local/" class="article-date">
-  <time datetime="2016-04-24T10:37:37.000Z" itemprop="datePublished">2016-04-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/linux-log-to-local/">服务器日志导出至本地</a>
+      <a class="article-title" href="/2016/04/24/exec-docker-bsh/">进入Docker管理Mongo数据库</a>
     </h1>
   
 
@@ -138,70 +92,70 @@
       
         <hr>
 <ul>
-<li>最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：<br><code>1.使用SSH登录不上服务器（不会弹出密码输入栏）</code><br><code>2.DNS解析超时</code><br><code>3.不定时出现无法连接的情况，之后会自行恢复正常</code></li>
-<li>通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。<h3 id="问题整理："><a href="#问题整理：" class="headerlink" title="问题整理："></a>问题整理：</h3></li>
-<li>将虚拟机下/var/下的所有log，打包并导出至本地，通过邮件提供给微软工程师
-        
-          <p class="article-more-link">
-            <a href="/2016/04/24/linux-log-to-local/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhiru.tech/2016/04/24/linux-log-to-local/" data-id="cinfrtbeb0004slwwy1kv8s5m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Log/">Log</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-
-  
-    <article id="post-url-for-file" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/24/url-for-file/" class="article-date">
-  <time datetime="2016-04-24T10:31:23.000Z" itemprop="datePublished">2016-04-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/url-for-file/">把文件放至服务器上生成Url</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<ul>
-<li><h4 id="以Json文件为例"><a href="#以Json文件为例" class="headerlink" title="以Json文件为例"></a>以Json文件为例</h4></li>
-<li><h4 id="将文件放至服务器的某一目录下"><a href="#将文件放至服务器的某一目录下" class="headerlink" title="将文件放至服务器的某一目录下"></a>将文件放至服务器的某一目录下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/User/project/ABC.json</span><br><span class="line">//比如讲一个名为ABC的Json文件放至project目录下</span><br></pre></td></tr></table></figure>
+<li><h4 id="进入docker容器"><a href="#进入docker容器" class="headerlink" title="进入docker容器"></a>进入docker容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -i -t xxx bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="进入mongo"><a href="#进入mongo" class="headerlink" title="进入mongo"></a>进入mongo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
         
           <p class="article-more-link">
-            <a href="/2016/04/24/url-for-file/#more">Read More</a>
+            <a href="/2016/04/24/exec-docker-bsh/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhiru.tech/2016/04/24/url-for-file/" data-id="cinfrtbed0006slww4m1b01ve" class="article-share-link">Share</a>
+      <a data-url="http://zhiru.tech/2016/04/24/exec-docker-bsh/" data-id="cinfrtbdu0000slwwlwn0kxj3" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Url/">Url</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+
+  
+    <article id="post-install-docker-nodejs-nginx-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/24/install-docker-nodejs-nginx-git/" class="article-date">
+  <time datetime="2016-04-24T09:41:28.000Z" itemprop="datePublished">2016-04-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/24/install-docker-nodejs-nginx-git/">安装Docker/Nginx/Nodejs/Git/Mongodb</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><h5 id="检查更新"><a href="#检查更新" class="headerlink" title="检查更新"></a>检查更新</h5><code>sudo apt-get update</code><h4 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h4></li>
+<li><h5 id="下载nginx官方公钥"><a href="#下载nginx官方公钥" class="headerlink" title="下载nginx官方公钥"></a>下载nginx官方公钥</h5><code>wget http://nginx.org/keys/nginx_signing.key</code>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/24/install-docker-nodejs-nginx-git/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/" data-id="cinfrtbe90003slww6qpcr3a5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
     </footer>
   </div>
@@ -214,7 +168,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 </section>
         
