@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhiru.tech/2016/05/30/check-logs/</loc>
+    
+    <lastmod>2016-05-30T14:52:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhiru.tech/2016/05/22/pictest/</loc>
     
-    <lastmod>2016-05-22T11:16:44.000Z</lastmod>
+    <lastmod>2016-05-30T14:51:32.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://zhiru.tech/2016/05/12/uncompress/</loc>
     
     <lastmod>2016-05-17T13:58:21.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/</loc>
-    
-    <lastmod>2016-04-24T12:30:17.000Z</lastmod>
     
   </url>
   
@@ -31,6 +31,13 @@
   
   <url>
     <loc>http://zhiru.tech/2016/04/24/linux-log-to-local/</loc>
+    
+    <lastmod>2016-04-24T12:30:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/</loc>
     
     <lastmod>2016-04-24T12:30:17.000Z</lastmod>
     
