@@ -4,18 +4,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>mongodb-usage | Fenng</title>
+  <title>日志查看命令 | Fenng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="&amp;#x7A0D;&amp;#x5FAE;&amp;#x8BB0;&amp;#x5F55;&amp;#x51E0;&amp;#x4E2A;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x67E5;&amp;#x770B;&amp;#x65E5;&amp;#x5FD7;&amp;#x7684;&amp;#x547D;&amp;#x4EE4;&amp;#x3002;
+&amp;#x67E5;&amp;#x770B;Docker&amp;#x65E5;&amp;#x5FD7;
+1docker logs --tail=100">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mongodb-usage">
+<meta property="og:title" content="日志查看命令">
 <meta property="og:url" content="http://zhiru.tech/2016/05/30/check-logs/index.html">
 <meta property="og:site_name" content="Fenng">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-05-30T14:52:29.000Z">
+<meta property="og:description" content="&amp;#x7A0D;&amp;#x5FAE;&amp;#x8BB0;&amp;#x5F55;&amp;#x51E0;&amp;#x4E2A;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x67E5;&amp;#x770B;&amp;#x65E5;&amp;#x5FD7;&amp;#x7684;&amp;#x547D;&amp;#x4EE4;&amp;#x3002;
+&amp;#x67E5;&amp;#x770B;Docker&amp;#x65E5;&amp;#x5FD7;
+1docker logs --tail=100">
+<meta property="og:updated_time" content="2016-05-30T15:14:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mongodb-usage">
-<meta name="twitter:description">
+<meta name="twitter:title" content="日志查看命令">
+<meta name="twitter:description" content="&amp;#x7A0D;&amp;#x5FAE;&amp;#x8BB0;&amp;#x5F55;&amp;#x51E0;&amp;#x4E2A;&amp;#x5E38;&amp;#x7528;&amp;#x7684;&amp;#x67E5;&amp;#x770B;&amp;#x65E5;&amp;#x5FD7;&amp;#x7684;&amp;#x547D;&amp;#x4EE4;&amp;#x3002;
+&amp;#x67E5;&amp;#x770B;Docker&amp;#x65E5;&amp;#x5FD7;
+1docker logs --tail=100">
   
     <link rel="alternative" href="/atom.xml" title="Fenng" type="application/atom+xml">
   
@@ -80,6 +86,10 @@
   <time datetime="2016-05-30T14:52:29.000Z" itemprop="datePublished">2016-05-30</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/采石场/">采石场</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -88,7 +98,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mongodb-usage
+      日志查看命令
     </h1>
   
 
@@ -96,12 +106,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="&#x7A0D;&#x5FAE;&#x8BB0;&#x5F55;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x7684;&#x547D;&#x4EE4;&#x3002;"><a href="#&#x7A0D;&#x5FAE;&#x8BB0;&#x5F55;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x7684;&#x547D;&#x4EE4;&#x3002;" class="headerlink" title="&#x7A0D;&#x5FAE;&#x8BB0;&#x5F55;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x7684;&#x547D;&#x4EE4;&#x3002;"></a>&#x7A0D;&#x5FAE;&#x8BB0;&#x5F55;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x7684;&#x547D;&#x4EE4;&#x3002;</h4><ul>
+<li><p>&#x67E5;&#x770B;Docker&#x65E5;&#x5FD7;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs --tail=100 -f {container-name/id}</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x67E5;&#x770B;Nginx&#x65E5;&#x5FD7;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo tail -f /path/access.log</span><br><span class="line">sudo tail -f /path/error.log</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Cat&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/05/30/check-logs/" data-id="ciou5jc8p00097gwwtkmsedhu" class="article-share-link" data-share="baidu" data-title="mongodb-usage">Share</a>
+        <a data-url="http://zhiru.tech/2016/05/30/check-logs/" data-id="ciou5loxx00007tww6kva6l7i" class="article-share-link" data-share="baidu" data-title="日志查看命令">Share</a>
       
 
       
@@ -128,7 +149,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2016/05/30/check-logs/" data-title="mongodb-usage" data-url="http://zhiru.tech/2016/05/30/check-logs/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/05/30/check-logs/" data-title="日志查看命令" data-url="http://zhiru.tech/2016/05/30/check-logs/"></div>
   </section>
 
 </section>
@@ -139,7 +160,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -178,7 +199,7 @@
       <ul>
         
           <li>
-            <a href="/2016/05/30/check-logs/">mongodb-usage</a>
+            <a href="/2016/05/30/check-logs/">日志查看命令</a>
           </li>
         
           <li>

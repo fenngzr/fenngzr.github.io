@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhiru.tech/2016/05/12/uncompress/</loc>
+    
+    <lastmod>2016-05-30T15:16:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhiru.tech/2016/04/24/linux-log-to-local/</loc>
+    
+    <lastmod>2016-05-30T15:16:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/</loc>
+    
+    <lastmod>2016-05-30T15:15:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhiru.tech/2016/04/24/exec-docker-bsh/</loc>
+    
+    <lastmod>2016-05-30T15:15:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhiru.tech/2016/04/24/url-for-file/</loc>
+    
+    <lastmod>2016-05-30T15:15:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhiru.tech/2016/05/30/check-logs/</loc>
     
-    <lastmod>2016-05-30T14:52:29.000Z</lastmod>
+    <lastmod>2016-05-30T15:14:30.000Z</lastmod>
     
   </url>
   
@@ -12,41 +47,6 @@
     <loc>http://zhiru.tech/2016/05/22/pictest/</loc>
     
     <lastmod>2016-05-30T14:51:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhiru.tech/2016/05/12/uncompress/</loc>
-    
-    <lastmod>2016-05-17T13:58:21.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/</loc>
-    
-    <lastmod>2016-04-24T12:30:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhiru.tech/2016/04/24/exec-docker-bsh/</loc>
-    
-    <lastmod>2016-04-24T12:30:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhiru.tech/2016/04/24/linux-log-to-local/</loc>
-    
-    <lastmod>2016-04-24T12:30:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhiru.tech/2016/04/24/url-for-file/</loc>
-    
-    <lastmod>2016-04-24T12:30:17.000Z</lastmod>
     
   </url>
   
