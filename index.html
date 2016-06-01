@@ -109,23 +109,21 @@
 <li><p>&#x663E;&#x793A;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{ &quot;_id&quot; : ObjectId(&quot;111&quot;), &quot;isDelete&quot; : &quot;0&quot;, &quot;pubTime&quot; : &quot;&quot;, &quot;projectCreateTime&quot; : , &quot;projectStatus&quot; : 1, &quot;projectId&quot; : 12, &quot;masterId&quot; : &quot;&quot;, &quot;picLinks&quot; : &quot;&quot;, &quot;projectComment&quot; : &quot;&quot;, &quot;title&quot; : &quot;&#x3010;&quot;, &quot;list&quot; : [ &quot;20267271&quot;, &quot;20267269&quot;, &quot;20267283&quot;, &quot;20267265&quot;, &quot;20267282&quot;, &quot;20267270&quot;, &quot;20267279&quot;, &quot;20267255&quot;, &quot;20262041&quot;, &quot;20267268&quot;, &quot;20260774&quot;, &quot;20268485&quot;, &quot;20269391&quot;, &quot;20270718&quot;, &quot;20270695&quot;, &quot;20270655&quot;, &quot;20270586&quot;, &quot;20271744&quot;, &quot;20272525&quot; ], &quot;newsType&quot; : &quot;2&quot;, &quot;imges&quot; : [ ], &quot;_abstract&quot; : &quot;0&quot;, &quot;__v&quot; : 0 }</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>&#x5220;&#x9664;&#x8FD9;&#x6761;&#x6570;&#x636E;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.remove({_id:ObjectId(&quot;111&quot;)})</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x66F4;&#x65B0;list&#x6570;&#x7EC4;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.update ({&quot;projectId&#x201D;:12},{$set:{&quot;list&quot;: [&quot;19185804&quot;, &quot;19183255&quot;, &quot;19175356&quot;, &quot;19156716&quot;, &quot;19138980&quot;, &quot;19132215&quot;]}}) #&#x6CE8;&#x610F;&#xFF1A;&#x65B0;&#x66F4;&#x65B0;&#x7684;list&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x66FF;&#x6362;&#x6389;&#x5DF2;&#x6709;&#x7684;</span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/06/01/manage-mongodb-in-docker/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/06/01/manage-mongodb-in-docker/" data-id="ciowbqwy6001eaqww9q5oc56v" class="article-share-link" data-share="baidu" data-title="进入Docker管理Mongo数据库（二）">Share</a>
+        <a data-url="http://zhiru.tech/2016/06/01/manage-mongodb-in-docker/" data-id="ciowzp7um0001nbwwj1bx6e1b" class="article-share-link" data-share="baidu" data-title="进入Docker管理Mongo数据库（二）">分享到</a>
       
 
       
-        <a href="http://zhiru.tech/2016/06/01/manage-mongodb-in-docker/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://zhiru.tech/2016/06/01/manage-mongodb-in-docker/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -173,51 +171,23 @@
 <p>Ubuntu 14.04.4 LTS \n \l</p>
 </blockquote>
 <ul>
-<li><p>&#x5148;&#x5907;&#x4EFD;waagent.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/waagent.conf /etc/waagent.conf.org</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x4FEE;&#x6539;waagent.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/waagent.conf</span><br></pre></td></tr></table></figure>
+<li>&#x5148;&#x5907;&#x4EFD;waagent.conf<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/waagent.conf /etc/waagent.conf.org</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
-<p>ResourceDisk.Format=n            -&gt; Change to         ResourceDisk.Format=y<br>ResourceDisk.EnableSwap=n        -&gt; Change to         ResourceDisk.EnableSwap=y<br>ResourceDisk.SwapSizeMB=0        -&gt; Change to         ResourceDisk.SwapSizeMB=2048</p>
-</blockquote>
-<ul>
-<li><p>&#x91CD;&#x542F;&#x670D;&#x52A1;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service walinuxagent restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x5F00;&#x542F;swap</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x786E;&#x8BA4;swap&#x4FE1;&#x606F;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/swaps</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>Filename                                Type            Size    Used    Priority<br>/mnt/swapfile                           file            2097148 0       -1</p>
-</blockquote>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file /mnt/swapfile</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>/mnt/swapfile: Linux/i386 swap file (new style), version 1 (4K pages), size 524287 pages, no label,UUID=aa3097ce-84e3-49a9-b6fb-ab50bcff7823</p>
-</blockquote>
-<ul>
-<li>&#x68C0;&#x67E5;swap&#x662F;&#x5426;&#x751F;&#x6548;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/05/31/microsoft-vm-open-swapfile/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/" data-id="ciowbqww30003aqww84yvpvlr" class="article-share-link" data-share="baidu" data-title="开启微软服务器的swap功能">Share</a>
+        <a data-url="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/" data-id="ciowzp7ut0003nbwwf0743sek" class="article-share-link" data-share="baidu" data-title="开启微软服务器的swap功能">分享到</a>
       
 
       
-        <a href="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -264,20 +234,21 @@
 <li><p>&#x67E5;&#x770B;Nginx&#x65E5;&#x5FD7;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo tail -f /path/access.log</span><br><span class="line">sudo tail -f /path/error.log</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Cat&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/05/30/check-logs/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/05/30/check-logs/" data-id="ciowbqwvo0000aqwwml9ladjo" class="article-share-link" data-share="baidu" data-title="日志查看命令">Share</a>
+        <a data-url="http://zhiru.tech/2016/05/30/check-logs/" data-id="ciowzp7uf0000nbwwcx564elq" class="article-share-link" data-share="baidu" data-title="日志查看命令">分享到</a>
       
 
       
-        <a href="http://zhiru.tech/2016/05/30/check-logs/#ds-thread" class="article-comment-link">Comments</a>
+        <a href="http://zhiru.tech/2016/05/30/check-logs/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -300,7 +271,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a><span class="category-list-count">8</span></li></ul>
     </div>
@@ -309,7 +280,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">标签</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a><span class="tag-list-count">1</span></li></ul>
     </div>
@@ -318,7 +289,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
       <a href="/tags/Docker/" style="font-size: 16.67px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 13.33px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a>
     </div>
@@ -327,7 +298,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">4</span></li></ul>
     </div>
@@ -336,7 +307,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
         
@@ -367,7 +338,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
+    <h3 class="widget-title">友情链接</h3>
     <div class="widget">
       <ul>
         
@@ -413,7 +384,7 @@
 </nav>
   <!-- totop start -->
 <div id="totop">
-<a title="totop"><img src="/img/scrollup.png"/></a>
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 </div>
 
 <!-- totop end -->
