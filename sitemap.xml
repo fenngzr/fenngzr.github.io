@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhiru.tech/2016/06/01/manage-mongodb-in-docker/</loc>
+    
+    <lastmod>2016-06-01T02:38:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhiru.tech/2016/04/24/exec-docker-bsh/</loc>
+    
+    <lastmod>2016-06-01T02:30:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhiru.tech/2016/05/12/uncompress/</loc>
     
     <lastmod>2016-05-30T15:16:08.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://zhiru.tech/2016/04/24/install-docker-nodejs-nginx-git/</loc>
     
     <lastmod>2016-05-30T15:15:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhiru.tech/2016/04/24/exec-docker-bsh/</loc>
-    
-    <lastmod>2016-05-30T15:15:50.000Z</lastmod>
     
   </url>
   
