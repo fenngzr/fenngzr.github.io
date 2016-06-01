@@ -4,17 +4,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Git | Fenng</title>
+  <title>开启微软服务器的swap功能 | Fenng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fenng">
-<meta property="og:url" content="http://zhiru.tech/tags/Git/index.html">
+  <meta name="description" content="root&amp;#x7528;&amp;#x6237;&amp;#x767B;&amp;#x9646;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#xFF0C;&amp;#x67E5;&amp;#x770B;&amp;#x7CFB;&amp;#x7EDF;&amp;#x4FE1;&amp;#x606F;1cat /etc/issue
+
+
+
+Ubuntu 14.04.4 LTS \n \l
+
+
+&amp;#x5148;&amp;#x5907;&amp;#x4EFD;waagent.conf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开启微软服务器的swap功能">
+<meta property="og:url" content="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/index.html">
 <meta property="og:site_name" content="Fenng">
-<meta property="og:description">
+<meta property="og:description" content="root&amp;#x7528;&amp;#x6237;&amp;#x767B;&amp;#x9646;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#xFF0C;&amp;#x67E5;&amp;#x770B;&amp;#x7CFB;&amp;#x7EDF;&amp;#x4FE1;&amp;#x606F;1cat /etc/issue
+
+
+
+Ubuntu 14.04.4 LTS \n \l
+
+
+&amp;#x5148;&amp;#x5907;&amp;#x4EFD;waagent.conf">
+<meta property="og:updated_time" content="2016-06-01T03:52:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fenng">
-<meta name="twitter:description">
+<meta name="twitter:title" content="开启微软服务器的swap功能">
+<meta name="twitter:description" content="root&amp;#x7528;&amp;#x6237;&amp;#x767B;&amp;#x9646;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#xFF0C;&amp;#x67E5;&amp;#x770B;&amp;#x7CFB;&amp;#x7EDF;&amp;#x4FE1;&amp;#x606F;1cat /etc/issue
+
+
+
+Ubuntu 14.04.4 LTS \n \l
+
+
+&amp;#x5148;&amp;#x5907;&amp;#x4EFD;waagent.conf">
   
     <link rel="alternative" href="/sitemap.xml" title="Fenng" type="application/atom+xml">
   
@@ -73,39 +95,121 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/24/install-docker-nodejs-nginx-git/" class="archive-article-date">
-  <time datetime="2016-04-24T09:41:28.000Z" itemprop="datePublished">Apr 24</time>
+      <section id="main"><article id="post-microsoft-vm-open-swapfile" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/31/microsoft-vm-open-swapfile/" class="article-date">
+  <time datetime="2016-05-31T09:41:28.000Z" itemprop="datePublished">2016-05-31</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/采石场/">采石场</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/24/install-docker-nodejs-nginx-git/">安装Docker/Nginx/Nodejs/Git/Mongodb</a>
+    <h1 class="article-title" itemprop="name">
+      开启微软服务器的swap功能
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>root&#x7528;&#x6237;&#x767B;&#x9646;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x67E5;&#x770B;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>Ubuntu 14.04.4 LTS \n \l</p>
+</blockquote>
+<ul>
+<li><p>&#x5148;&#x5907;&#x4EFD;waagent.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/waagent.conf /etc/waagent.conf.org</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x4FEE;&#x6539;waagent.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/waagent.conf</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>ResourceDisk.Format=n            -&gt; Change to         ResourceDisk.Format=y<br>ResourceDisk.EnableSwap=n        -&gt; Change to         ResourceDisk.EnableSwap=y<br>ResourceDisk.SwapSizeMB=0        -&gt; Change to         ResourceDisk.SwapSizeMB=2048</p>
+</blockquote>
+<ul>
+<li><p>&#x91CD;&#x542F;&#x670D;&#x52A1;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service walinuxagent restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5F00;&#x542F;swap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x786E;&#x8BA4;swap&#x4FE1;&#x606F;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/swaps</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>Filename                                Type            Size    Used    Priority<br>/mnt/swapfile                           file            2097148 0       -1</p>
+</blockquote>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file /mnt/swapfile</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>/mnt/swapfile: Linux/i386 swap file (new style), version 1 (4K pages), size 524287 pages, no label,UUID=aa3097ce-84e3-49a9-b6fb-ab50bcff7823</p>
+</blockquote>
+<ul>
+<li>&#x68C0;&#x67E5;swap&#x662F;&#x5426;&#x751F;&#x6548;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/" data-id="ciowbqww30003aqww84yvpvlr" class="article-share-link" data-share="baidu" data-title="开启微软服务器的swap功能">Share</a>
+      
+
+      
+        <a href="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swap/">swap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/01/manage-mongodb-in-docker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          进入Docker管理Mongo数据库（二）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/30/check-logs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">日志查看命令</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/05/31/microsoft-vm-open-swapfile/" data-title="开启微软服务器的swap功能" data-url="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/"></div>
+  </section>
+
 </section>
       
       <aside id="sidebar">
