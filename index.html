@@ -103,41 +103,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"><a href="#1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;" class="headerlink" title="1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"></a>1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</h3><ul>
-<li><p>&#x5B89;&#x88C5;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-redis -d redis</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x6D4B;&#x8BD5;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -i -t some-redis bash</span><br></pre></td></tr></table></figure>
+<li>&#x5B89;&#x88C5;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-redis -d redis</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>-<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@f440e0651bf0:/data# redis-cli  </span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">&quot;hello&quot;</span><br><span class="line">127.0.0.1:6379&gt; exit</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"><a href="#2-Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;" class="headerlink" title="2.Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"></a>2.Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</h3><ul>
-<li><p>&#x5B89;&#x88C5;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mongo  --restart=always -v /etc/localtime:/etc/localtime:ro  -v /data/db/mongodb/:/data/db  -d mongo  --smallfiles</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x6D4B;&#x8BD5;</p>
-<figure class="highlight docker"><figcaption><span>run -it --link mongo:mongo --rm mongo sh -c &apos;exec mongo &quot;$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test&quot;&apos;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">-</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>MongoDB shell version: 3.2.6<br>connecting to: 172.17.0.2:27017/test<br>Welcome to the MongoDB shell.<br>For interactive help, type &#x201C;help&#x201D;.<br>For more comprehensive documentation, see<br>    <a href="http://docs.mongodb.org/" target="_blank" rel="external">http://docs.mongodb.org/</a><br>Questions? Try the support group<br>    <a href="http://groups.google.com/group/mongodb-user" target="_blank" rel="external">http://groups.google.com/group/mongodb-user</a><br>Server has startup warnings:<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/enabled is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/defrag is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 3.Docker&#x4E0B;Nodejs&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</span><br><span class="line">`&#x53C2;&#x7167;&#x5B98;&#x7F51;&#xFF1A;https://nodejs.org/en/docs/guides/nodejs-docker-webapp/`</span><br><span class="line">- &#x521B;&#x5EFA;Node.js&#x7A0B;&#x5E8F;</span><br></pre></td></tr></table></figure></p>
-<p>mkdir newfile<br>cd newfile<br>vi package.json  //&#x63CF;&#x8FF0;&#x8BE5;&#x7A0B;&#x5E8F;&#x548C;&#x5B83;&#x7684;&#x4F9D;&#x8D56;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`package.json&#x586B;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;`</span><br></pre></td></tr></table></figure></p>
-<p>{<br>  &#x201C;name&#x201D;: &#x201C;docker_web_app&#x201D;,<br>  &#x201C;version&#x201D;: &#x201C;1.0.0&#x201D;,<br>  &#x201C;description&#x201D;: &#x201C;Node.js on Docker&#x201D;,<br>  &#x201C;author&#x201D;: &#x201C;First Last <a href="mailto:first.last@example.com">first.last@example.com</a>&#x201C;,<br>  &#x201C;main&#x201D;: &#x201C;server.js&#x201D;,<br>  &#x201C;scripts&#x201D;: {<br>    &#x201C;start&#x201D;: &#x201C;node server.js&#x201D;<br>  },<br>  &#x201C;dependencies&#x201D;: {<br>    &#x201C;express&#x201D;: &#x201C;^4.13.3&#x201D;<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#x521B;&#x5EFA;js&#x6587;&#x4EF6;`</span><br></pre></td></tr></table></figure></p>
-<p>vi server.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`js&#x6587;&#x4EF6;&#x91CC;&#x586B;&#x5982;&#x4E0B;&#x5185;&#x5BB9;`</span><br></pre></td></tr></table></figure></p>
-<p>&#x2018;use strict&#x2019;;</p>
-<p>const express = require(&#x2018;express&#x2019;);</p>
-<p>// Constants<br>const PORT = 8080;</p>
-<p>// App<br>const app = express();<br>app.get(&#x2018;/&#x2018;, function (req, res) {<br>  res.send(&#x2018;Hello world\n&#x2019;);<br>});</p>
-<p>app.listen(PORT);<br>console.log(&#x2018;Running on <a href="http://localhost" target="_blank" rel="external">http://localhost</a>:&#x2019; + PORT);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#x521B;&#x5EFA;Dockerfile</span><br></pre></td></tr></table></figure></p>
-<p>vi Dockerfile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#x91CC;&#x9762;&#x5185;&#x5BB9;&#x5982;&#x4E0B;`</span><br></pre></td></tr></table></figure></p>
-<p>FROM node:argon</p>
-<h1 id="Create-app-directory"><a href="#Create-app-directory" class="headerlink" title="Create app directory"></a>Create app directory</h1><p>RUN mkdir -p /usr/src/app<br>WORKDIR /usr/src/app</p>
-<h1 id="Install-app-dependencies"><a href="#Install-app-dependencies" class="headerlink" title="Install app dependencies"></a>Install app dependencies</h1><p>COPY package.json /usr/src/app/<br>RUN npm install</p>
-<h1 id="Bundle-app-source"><a href="#Bundle-app-source" class="headerlink" title="Bundle app source"></a>Bundle app source</h1><p>COPY . /usr/src/app</p>
-<p>EXPOSE 8080<br>CMD [ &#x201C;npm&#x201D;, &#x201C;start&#x201D; ]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#x521B;&#x5EFA;&#x955C;&#x50CF;</span><br></pre></td></tr></table></figure></p>
-<p>docker build -t <your username="">/node-web-app .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#x8FD0;&#x884C;</span><br></pre></td></tr></table></figure></your></p>
-<p>docker run -p 49160:8080 -d <your username="">/node-web-app<br>```</your></p>
-<pre><code>127.0.0.1:6379&gt; set test hello
-</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
