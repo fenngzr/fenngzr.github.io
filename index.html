@@ -72,8 +72,93 @@
     </div>
   </div>
 </header>
+
     <div class="outer">
       <section id="main">
+  
+    <article id="post-install-and-test-redis-nodejs-mongodb-in-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/" class="article-date">
+  <time datetime="2016-06-14T03:41:28.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/采石场/">采石场</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/">Docker下redis、nodejs和mongodb的安装与测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"><a href="#1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;" class="headerlink" title="1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"></a>1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</h3><ul>
+<li><p>&#x5B89;&#x88C5;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-redis -d redis</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x6D4B;&#x8BD5;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -i -t some-redis bash</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@f440e0651bf0:/data# redis-cli  </span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">&quot;hello&quot;</span><br><span class="line">127.0.0.1:6379&gt; exit</span><br></pre></td></tr></table></figure>
+<h3 id="2-Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"><a href="#2-Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;" class="headerlink" title="2.Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"></a>2.Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</h3><ul>
+<li><p>&#x5B89;&#x88C5;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mongo  --restart=always -v /etc/localtime:/etc/localtime:ro  -v /data/db/mongodb/:/data/db  -d mongo  --smallfiles</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x6D4B;&#x8BD5;</p>
+<figure class="highlight docker"><figcaption><span>run -it --link mongo:mongo --rm mongo sh -c &apos;exec mongo &quot;$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test&quot;&apos;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>MongoDB shell version: 3.2.6<br>connecting to: 172.17.0.2:27017/test<br>Welcome to the MongoDB shell.<br>For interactive help, type &#x201C;help&#x201D;.<br>For more comprehensive documentation, see<br>    <a href="http://docs.mongodb.org/" target="_blank" rel="external">http://docs.mongodb.org/</a><br>Questions? Try the support group<br>    <a href="http://groups.google.com/group/mongodb-user" target="_blank" rel="external">http://groups.google.com/group/mongodb-user</a><br>Server has startup warnings:<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/enabled is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/defrag is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### 3.Docker&#x4E0B;Nodejs&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</span><br><span class="line">`&#x53C2;&#x7167;&#x5B98;&#x7F51;&#xFF1A;https://nodejs.org/en/docs/guides/nodejs-docker-webapp/`</span><br><span class="line">- &#x521B;&#x5EFA;Node.js&#x7A0B;&#x5E8F;</span><br></pre></td></tr></table></figure></p>
+<p>mkdir newfile<br>cd newfile<br>vi package.json  //&#x63CF;&#x8FF0;&#x8BE5;&#x7A0B;&#x5E8F;&#x548C;&#x5B83;&#x7684;&#x4F9D;&#x8D56;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`package.json&#x586B;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;`</span><br></pre></td></tr></table></figure></p>
+<p>{<br>  &#x201C;name&#x201D;: &#x201C;docker_web_app&#x201D;,<br>  &#x201C;version&#x201D;: &#x201C;1.0.0&#x201D;,<br>  &#x201C;description&#x201D;: &#x201C;Node.js on Docker&#x201D;,<br>  &#x201C;author&#x201D;: &#x201C;First Last <a href="mailto:first.last@example.com">first.last@example.com</a>&#x201C;,<br>  &#x201C;main&#x201D;: &#x201C;server.js&#x201D;,<br>  &#x201C;scripts&#x201D;: {<br>    &#x201C;start&#x201D;: &#x201C;node server.js&#x201D;<br>  },<br>  &#x201C;dependencies&#x201D;: {<br>    &#x201C;express&#x201D;: &#x201C;^4.13.3&#x201D;<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#x521B;&#x5EFA;js&#x6587;&#x4EF6;`</span><br></pre></td></tr></table></figure></p>
+<p>vi server.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`js&#x6587;&#x4EF6;&#x91CC;&#x586B;&#x5982;&#x4E0B;&#x5185;&#x5BB9;`</span><br></pre></td></tr></table></figure></p>
+<p>&#x2018;use strict&#x2019;;</p>
+<p>const express = require(&#x2018;express&#x2019;);</p>
+<p>// Constants<br>const PORT = 8080;</p>
+<p>// App<br>const app = express();<br>app.get(&#x2018;/&#x2018;, function (req, res) {<br>  res.send(&#x2018;Hello world\n&#x2019;);<br>});</p>
+<p>app.listen(PORT);<br>console.log(&#x2018;Running on <a href="http://localhost" target="_blank" rel="external">http://localhost</a>:&#x2019; + PORT);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#x521B;&#x5EFA;Dockerfile</span><br></pre></td></tr></table></figure></p>
+<p>vi Dockerfile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#x91CC;&#x9762;&#x5185;&#x5BB9;&#x5982;&#x4E0B;`</span><br></pre></td></tr></table></figure></p>
+<p>FROM node:argon</p>
+<h1 id="Create-app-directory"><a href="#Create-app-directory" class="headerlink" title="Create app directory"></a>Create app directory</h1><p>RUN mkdir -p /usr/src/app<br>WORKDIR /usr/src/app</p>
+<h1 id="Install-app-dependencies"><a href="#Install-app-dependencies" class="headerlink" title="Install app dependencies"></a>Install app dependencies</h1><p>COPY package.json /usr/src/app/<br>RUN npm install</p>
+<h1 id="Bundle-app-source"><a href="#Bundle-app-source" class="headerlink" title="Bundle app source"></a>Bundle app source</h1><p>COPY . /usr/src/app</p>
+<p>EXPOSE 8080<br>CMD [ &#x201C;npm&#x201D;, &#x201C;start&#x201D; ]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#x521B;&#x5EFA;&#x955C;&#x50CF;</span><br></pre></td></tr></table></figure></p>
+<p>docker build -t <your username="">/node-web-app .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- &#x8FD0;&#x884C;</span><br></pre></td></tr></table></figure></your></p>
+<p>docker run -p 49160:8080 -d <your username="">/node-web-app<br>```</your></p>
+<pre><code>127.0.0.1:6379&gt; set test hello
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zhiru.tech/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/" data-id="cipezqj570000thwwyyu9v07v" class="article-share-link" data-share="baidu" data-title="Docker下redis、nodejs和mongodb的安装与测试">Share</a>
+      
+
+      
+        <a href="http://zhiru.tech/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-about-ps-stuff" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -357,66 +442,6 @@
 
 
   
-    <article id="post-uncompress" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/12/uncompress/" class="article-date">
-  <time datetime="2016-05-12T09:57:38.000Z" itemprop="datePublished">2016-05-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/采石场/">采石场</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/12/uncompress/">总结几种解压方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="&#x4E3B;&#x8981;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#xFF0C;&#x81EA;&#x5DF1;&#x5728;LINUX&#x73AF;&#x5883;&#x4E0B;&#x78B0;&#x5230;&#x7684;&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;&#x65B9;&#x6CD5;"><a href="#&#x4E3B;&#x8981;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#xFF0C;&#x81EA;&#x5DF1;&#x5728;LINUX&#x73AF;&#x5883;&#x4E0B;&#x78B0;&#x5230;&#x7684;&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4E3B;&#x8981;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#xFF0C;&#x81EA;&#x5DF1;&#x5728;LINUX&#x73AF;&#x5883;&#x4E0B;&#x78B0;&#x5230;&#x7684;&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;&#x65B9;&#x6CD5;"></a>&#x4E3B;&#x8981;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#xFF0C;&#x81EA;&#x5DF1;&#x5728;LINUX&#x73AF;&#x5883;&#x4E0B;&#x78B0;&#x5230;&#x7684;&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;&#x65B9;&#x6CD5;</h4><ul>
-<li><p>&#x538B;&#x7F29;&#x4E3A;gz&#x683C;&#x5F0F;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf filename.tar.gz /dir/log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x89E3;&#x538B;gz&#x683C;&#x5F0F;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xf filename.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x89E3;&#x538B;rar&#x683C;&#x5F0F;<br><code>&#x9700;&#x8981;&#x5148;&#x5B89;&#x88C5;unrar&#x5DE5;&#x5177;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unrar</span><br><span class="line">unrar x filename.rar</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zhiru.tech/2016/05/12/uncompress/" data-id="cip1zbd07000ihxwwj1mwo9dp" class="article-share-link" data-share="baidu" data-title="总结几种解压方法">Share</a>
-      
-
-      
-        <a href="http://zhiru.tech/2016/05/12/uncompress/#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gzip/">gzip</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tar/">tar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unrar/">unrar</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -430,7 +455,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小技能/">小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小技能/">小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a><span class="category-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -439,7 +464,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -448,7 +473,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 16.67px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 13.33px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a>
+      <a href="/tags/Docker/" style="font-size: 16.67px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 13.33px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 13.33px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a>
     </div>
   </div>
 
@@ -457,7 +482,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -467,6 +492,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/">Docker下redis、nodejs和mongodb的安装与测试</a>
+          </li>
         
           <li>
             <a href="/2016/06/01/about-ps-stuff/">PS小技能之裁剪圆形图（一）</a>
@@ -482,10 +511,6 @@
         
           <li>
             <a href="/2016/05/30/check-logs/">日志查看命令</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/22/pictest/">你的自拍</a>
           </li>
         
       </ul>
@@ -525,11 +550,20 @@
     <div id="footer-info" class="inner">
       &copy; 2016 美味二师兄<br>
 Hexo
-😄 
-            <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+😄
+
     </div>
   </div>
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7a0e59563dfdc542c0122d5a3fa8a5cb";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </footer>
 
   </div>
