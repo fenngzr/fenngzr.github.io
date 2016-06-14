@@ -14,7 +14,7 @@
 1docker exec -i -t some-redis bash
 
 
-12345root@f440e0651">
+-12345root@f440e065">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker下redis、nodejs和mongodb的安装与测试">
 <meta property="og:url" content="http://zhiru.tech/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/index.html">
@@ -27,8 +27,8 @@
 1docker exec -i -t some-redis bash
 
 
-12345root@f440e0651">
-<meta property="og:updated_time" content="2016-06-14T05:10:49.000Z">
+-12345root@f440e065">
+<meta property="og:updated_time" content="2016-06-14T05:13:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker下redis、nodejs和mongodb的安装与测试">
 <meta name="twitter:description" content="1.Docker&amp;#x4E0B;Redis&amp;#x7684;&amp;#x5B89;&amp;#x88C5;&amp;#x4E0E;&amp;#x6D4B;&amp;#x8BD5;
@@ -39,7 +39,7 @@
 1docker exec -i -t some-redis bash
 
 
-12345root@f440e0651">
+-12345root@f440e065">
   
     <link rel="alternative" href="/sitemap.xml" title="Fenng" type="application/atom+xml">
   
@@ -133,16 +133,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -i -t some-redis bash</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@f440e0651bf0:/data# redis-cli  </span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">&quot;hello&quot;</span><br><span class="line">127.0.0.1:6379&gt; exit</span><br></pre></td></tr></table></figure>
+<p>-<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@f440e0651bf0:/data# redis-cli  </span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get test</span><br><span class="line">&quot;hello&quot;</span><br><span class="line">127.0.0.1:6379&gt; exit</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"><a href="#2-Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;" class="headerlink" title="2.Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"></a>2.Docker&#x4E0B;Mongodb&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</h3><ul>
 <li><p>&#x5B89;&#x88C5;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mongo  --restart=always -v /etc/localtime:/etc/localtime:ro  -v /data/db/mongodb/:/data/db  -d mongo  --smallfiles</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>&#x6D4B;&#x8BD5;</p>
-<figure class="highlight docker"><figcaption><span>run -it --link mongo:mongo --rm mongo sh -c &apos;exec mongo &quot;$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test&quot;&apos;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```</span><br></pre></td></tr></table></figure>
+<figure class="highlight docker"><figcaption><span>run -it --link mongo:mongo --rm mongo sh -c &apos;exec mongo &quot;$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test&quot;&apos;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">-</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>MongoDB shell version: 3.2.6<br>connecting to: 172.17.0.2:27017/test<br>Welcome to the MongoDB shell.<br>For interactive help, type &#x201C;help&#x201D;.<br>For more comprehensive documentation, see<br>    <a href="http://docs.mongodb.org/" target="_blank" rel="external">http://docs.mongodb.org/</a><br>Questions? Try the support group<br>    <a href="http://groups.google.com/group/mongodb-user" target="_blank" rel="external">http://groups.google.com/group/mongodb-user</a><br>Server has startup warnings:<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/enabled is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/defrag is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### 3.Docker&#x4E0B;Nodejs&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</span><br><span class="line">`&#x53C2;&#x7167;&#x5B98;&#x7F51;&#xFF1A;https://nodejs.org/en/docs/guides/nodejs-docker-webapp/`</span><br><span class="line">- &#x521B;&#x5EFA;Node.js&#x7A0B;&#x5E8F;</span><br></pre></td></tr></table></figure></p>
+<p>MongoDB shell version: 3.2.6<br>connecting to: 172.17.0.2:27017/test<br>Welcome to the MongoDB shell.<br>For interactive help, type &#x201C;help&#x201D;.<br>For more comprehensive documentation, see<br>    <a href="http://docs.mongodb.org/" target="_blank" rel="external">http://docs.mongodb.org/</a><br>Questions? Try the support group<br>    <a href="http://groups.google.com/group/mongodb-user" target="_blank" rel="external">http://groups.google.com/group/mongodb-user</a><br>Server has startup warnings:<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/enabled is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] <strong> WARNING: /sys/kernel/mm/transparent_hugepage/defrag is &#x2018;always&#x2019;.<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten] </strong>        We suggest setting it to &#x2018;never&#x2019;<br>2016-06-13T14:35:16.738+0800 I CONTROL  [initandlisten]<br>&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 3.Docker&#x4E0B;Nodejs&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</span><br><span class="line">`&#x53C2;&#x7167;&#x5B98;&#x7F51;&#xFF1A;https://nodejs.org/en/docs/guides/nodejs-docker-webapp/`</span><br><span class="line">- &#x521B;&#x5EFA;Node.js&#x7A0B;&#x5E8F;</span><br></pre></td></tr></table></figure></p>
 <p>mkdir newfile<br>cd newfile<br>vi package.json  //&#x63CF;&#x8FF0;&#x8BE5;&#x7A0B;&#x5E8F;&#x548C;&#x5B83;&#x7684;&#x4F9D;&#x8D56;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`package.json&#x586B;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;`</span><br></pre></td></tr></table></figure></p>
 <p>{<br>  &#x201C;name&#x201D;: &#x201C;docker_web_app&#x201D;,<br>  &#x201C;version&#x201D;: &#x201C;1.0.0&#x201D;,<br>  &#x201C;description&#x201D;: &#x201C;Node.js on Docker&#x201D;,<br>  &#x201C;author&#x201D;: &#x201C;First Last <a href="mailto:first.last@example.com">first.last@example.com</a>&#x201C;,<br>  &#x201C;main&#x201D;: &#x201C;server.js&#x201D;,<br>  &#x201C;scripts&#x201D;: {<br>    &#x201C;start&#x201D;: &#x201C;node server.js&#x201D;<br>  },<br>  &#x201C;dependencies&#x201D;: {<br>    &#x201C;express&#x201D;: &#x201C;^4.13.3&#x201D;<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&#x521B;&#x5EFA;js&#x6587;&#x4EF6;`</span><br></pre></td></tr></table></figure></p>
 <p>vi server.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`js&#x6587;&#x4EF6;&#x91CC;&#x586B;&#x5982;&#x4E0B;&#x5185;&#x5BB9;`</span><br></pre></td></tr></table></figure></p>
