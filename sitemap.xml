@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhiru.tech/2016/06/27/migrate-server/</loc>
+    
+    <lastmod>2016-06-27T09:16:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhiru.tech/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/</loc>
     
     <lastmod>2016-06-14T05:22:11.000Z</lastmod>

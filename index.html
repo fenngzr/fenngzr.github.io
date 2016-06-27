@@ -77,6 +77,64 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-migrate-server" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/27/migrate-server/" class="article-date">
+  <time datetime="2016-06-27T10:20:55.000Z" itemprop="datePublished">2016-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/采石场/">采石场</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/27/migrate-server/">服务器的迁移</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;"><a href="#&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;</h4><ul>
+<li>&#x5C06;&#x8001;&#x670D;&#x52A1;&#x5668;A&#x4E0A;&#x7684;&#x5341;&#x51E0;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x8FC1;&#x79FB;&#x81F3;&#x65B0;&#x670D;&#x52A1;&#x5668;B&#x4E0A;&#x3002;</li>
+<li>A&#x76EE;&#x524D;nginx&#x7684;server name&#x4E3A;a.xxxxxxx.com&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  a.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">        access_log /data/log/nginx/access.log;</span><br><span class="line">        error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">       location / {</span><br><span class="line">           proxy_pass http://localhost:4300;</span><br><span class="line">				        }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/27/migrate-server/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://zhiru.tech/2016/06/27/migrate-server/" data-id="cipxt2cff00097kwwneqt69ly" class="article-share-link" data-share="baidu" data-title="服务器的迁移">分享到</a>
+      
+
+      
+        <a href="http://zhiru.tech/2016/06/27/migrate-server/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-install-and-test-redis-nodejs-mongodb-in-docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/" class="article-date">
@@ -116,7 +174,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/" data-id="cipi3xnlj0005ji7161t2anfv" class="article-share-link" data-share="baidu" data-title="Docker下redis、nodejs和mongodb的安装与测试">分享到</a>
+        <a data-url="http://zhiru.tech/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/" data-id="cipxt2cf700057kwwj7mwyvn8" class="article-share-link" data-share="baidu" data-title="Docker下redis、nodejs和mongodb的安装与测试">分享到</a>
       
 
       
@@ -165,7 +223,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/06/01/about-ps-stuff/" data-id="cipi3xnl00000ji71uf87xyko" class="article-share-link" data-share="baidu" data-title="PS小技能之裁剪圆形图（一）">分享到</a>
+        <a data-url="http://zhiru.tech/2016/06/01/about-ps-stuff/" data-id="cipxt2cep00007kww1dwwith6" class="article-share-link" data-share="baidu" data-title="PS小技能之裁剪圆形图（一）">分享到</a>
       
 
       
@@ -227,7 +285,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/06/01/manage-mongodb-in-docker/" data-id="cipi3xnlw000bji71s6158znt" class="article-share-link" data-share="baidu" data-title="进入Docker管理Mongo数据库（二）">分享到</a>
+        <a data-url="http://zhiru.tech/2016/06/01/manage-mongodb-in-docker/" data-id="cipxt2cfa00077kwwekle46th" class="article-share-link" data-share="baidu" data-title="进入Docker管理Mongo数据库（二）">分享到</a>
       
 
       
@@ -291,7 +349,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/" data-id="cipi3xnm3000fji71hdwrk4yh" class="article-share-link" data-share="baidu" data-title="开启微软服务器的swap功能">分享到</a>
+        <a data-url="http://zhiru.tech/2016/05/31/microsoft-vm-open-swapfile/" data-id="cipxt2cfy000i7kwwj30hjgzl" class="article-share-link" data-share="baidu" data-title="开启微软服务器的swap功能">分享到</a>
       
 
       
@@ -352,59 +410,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://zhiru.tech/2016/05/30/check-logs/" data-id="cipi3xnl80001ji71q62f8f7j" class="article-share-link" data-share="baidu" data-title="日志查看命令">分享到</a>
+        <a data-url="http://zhiru.tech/2016/05/30/check-logs/" data-id="cipxt2cfk000b7kwwoocyu4rn" class="article-share-link" data-share="baidu" data-title="日志查看命令">分享到</a>
       
 
       
         <a href="http://zhiru.tech/2016/05/30/check-logs/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-pictest" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/22/pictest/" class="article-date">
-  <time datetime="2016-05-22T10:55:42.000Z" itemprop="datePublished">2016-05-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/逗趣图集/">逗趣图集</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/22/pictest/">你的自拍</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2016/05/22/pictest/&#x54C8;&#x58EB;&#x5947;.jpg" alt="What are you &#x7785;&#x5565;&#x5462;~"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://zhiru.tech/2016/05/22/pictest/" data-id="cipi3xnmf000mji71g5wlc6v4" class="article-share-link" data-share="baidu" data-title="你的自拍">分享到</a>
-      
-
-      
-        <a href="http://zhiru.tech/2016/05/22/pictest/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -429,7 +439,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小技能/">小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a><span class="category-list-count">9</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小技能/">小技能</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a><span class="category-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -438,7 +448,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -447,7 +457,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 16.67px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 13.33px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 13.33px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a>
+      <a href="/tags/Docker/" style="font-size: 17.5px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 12.5px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 12.5px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a>
     </div>
   </div>
 
@@ -456,7 +466,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -466,6 +476,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/27/migrate-server/">服务器的迁移</a>
+          </li>
         
           <li>
             <a href="/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/">Docker下redis、nodejs和mongodb的安装与测试</a>
@@ -481,10 +495,6 @@
         
           <li>
             <a href="/2016/05/31/microsoft-vm-open-swapfile/">开启微软服务器的swap功能</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/30/check-logs/">日志查看命令</a>
           </li>
         
       </ul>
