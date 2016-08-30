@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>服务器的迁移 | Fenng</title>
+  <title>服务器的迁移 | Fenng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="&amp;#x60C5;&amp;#x51B5;&amp;#x8BF4;&amp;#x660E;&amp;#xFF1A;
 &amp;#x5C06;&amp;#x8001;&amp;#x670D;&amp;#x52A1;&amp;#x5668;A&amp;#x4E0A;&amp;#x7684;&amp;#x5341;&amp;#x51E0;&amp;#x4E2A;&amp;#x670D;&amp;#x52A1;&amp;#xFF0C;&amp;#x8FC1;&amp;#x79FB;&amp;#x81F3;&amp;#x65B0;&amp;#x670D;&amp;#x52A1;&amp;#x566">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器的迁移">
-<meta property="og:url" content="http://zhiru.tech/2016/06/27/migrate-server/index.html">
-<meta property="og:site_name" content="Fenng">
+<meta property="og:url" content="http://yoursite.com/2016/06/27/migrate-server/index.html">
+<meta property="og:site_name" content="Fenng's Blog">
 <meta property="og:description" content="&amp;#x60C5;&amp;#x51B5;&amp;#x8BF4;&amp;#x660E;&amp;#xFF1A;
 &amp;#x5C06;&amp;#x8001;&amp;#x670D;&amp;#x52A1;&amp;#x5668;A&amp;#x4E0A;&amp;#x7684;&amp;#x5341;&amp;#x51E0;&amp;#x4E2A;&amp;#x670D;&amp;#x52A1;&amp;#xFF0C;&amp;#x8FC1;&amp;#x79FB;&amp;#x81F3;&amp;#x65B0;&amp;#x670D;&amp;#x52A1;&amp;#x566">
 <meta property="og:updated_time" content="2016-06-27T09:16:10.000Z">
@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="&amp;#x60C5;&amp;#x51B5;&amp;#x8BF4;&amp;#x660E;&amp;#xFF1A;
 &amp;#x5C06;&amp;#x8001;&amp;#x670D;&amp;#x52A1;&amp;#x5668;A&amp;#x4E0A;&amp;#x7684;&amp;#x5341;&amp;#x51E0;&amp;#x4E2A;&amp;#x670D;&amp;#x52A1;&amp;#xFF0C;&amp;#x8FC1;&amp;#x79FB;&amp;#x81F3;&amp;#x65B0;&amp;#x670D;&amp;#x52A1;&amp;#x566">
   
-    <link rel="alternate" href="/atom.xml" title="Fenng" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Fenng&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -40,12 +40,8 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Fenng</a>
+        <a href="/" id="logo">Fenng&#39;s Blog</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">like the wind.</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -61,10 +57,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhiru.tech"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
       </div>
     </div>
   </div>
@@ -98,26 +94,26 @@
       
         <h4 id="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;"><a href="#&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;</h4><ul>
 <li>&#x5C06;&#x8001;&#x670D;&#x52A1;&#x5668;A&#x4E0A;&#x7684;&#x5341;&#x51E0;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x8FC1;&#x79FB;&#x81F3;&#x65B0;&#x670D;&#x52A1;&#x5668;B&#x4E0A;&#x3002;</li>
-<li>A&#x76EE;&#x524D;nginx&#x7684;server name&#x4E3A;a.xxxxxxx.com&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  a.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">        access_log /data/log/nginx/access.log;</span><br><span class="line">        error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">       location / {</span><br><span class="line">           proxy_pass http://localhost:4300;</span><br><span class="line">				        }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
+<li>A&#x76EE;&#x524D;nginx&#x7684;server name&#x4E3A;a.xxxxxxx.com&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  a.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">        access_log /data/log/nginx/access.log;</span><br><span class="line">        error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">       location / {</span><br><span class="line">           proxy_pass http://localhost:4300;</span><br><span class="line">				        }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <a id="more"></a>
 <h4 id="&#x601D;&#x8DEF;&#xFF1A;"><a href="#&#x601D;&#x8DEF;&#xFF1A;" class="headerlink" title="&#x601D;&#x8DEF;&#xFF1A;"></a>&#x601D;&#x8DEF;&#xFF1A;</h4><p>1.&#x5C06;&#x57DF;&#x540D;&#x4ECE;A&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x5230;B&#x670D;&#x52A1;&#x5668;<br>2.&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x90FD;&#x901A;&#x8FC7;B&#x53BB;&#x91CD;&#x5B9A;&#x5411;&#x5230;A&#x6765;&#x5B9E;&#x73B0;<br>3.&#x9010;&#x6B65;&#x5728;B&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#xFF0C;&#x6BCF;&#x90E8;&#x7F72;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x5373;&#x53EF;&#x4FEE;&#x6539;B&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;nginx&#x914D;&#x7F6E;&#xFF0C;&#x7531;<code>proxy_pass&#x91CD;&#x5B9A;&#x5411;</code>&#x5230;<code>proxy_pass&#x672C;&#x5730;&#x670D;&#x52A1;</code></p>
 <h4 id="&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;"><a href="#&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;" class="headerlink" title="&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;"></a>&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;</h4><ul>
 <li><p>&#x5728;A&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x65B0;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;nginx&#xFF0C;server name&#x4E3A;b.xxxxxxx.com&#xFF0C;&#x5982;&#x4E0B;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  b.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">        access_log /data/log/nginx/access.log;</span><br><span class="line">        error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">       location / {</span><br><span class="line">           proxy_pass http://localhost:4300;</span><br><span class="line">				        }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  b.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">        access_log /data/log/nginx/access.log;</span><br><span class="line">        error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">       location / {</span><br><span class="line">           proxy_pass http://localhost:4300;</span><br><span class="line">				        }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>&#x5728;B&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x6DFB;&#x52A0;host&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b.xxxxxxx.com  xx.xx.xx.xx(A&#x7684;Ip)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">b.xxxxxxx.com  xx.xx.xx.xx(A&#x7684;Ip)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>&#x5728;B&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x68C0;&#x9A8C;host&#x662F;&#x5426;&#x751F;&#x6548;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping b.xxxxxxx.com  //&#x80FD;ping&#x901A;&#xFF0C;&#x5219;&#x751F;&#x6548;&#x4E86;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ping b.xxxxxxx.com  //&#x80FD;ping&#x901A;&#xFF0C;&#x5219;&#x751F;&#x6548;&#x4E86;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>&#x5728;B&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x914D;&#x7F6E;nginx&#xFF0C;server name&#x4E3A;a.xxxxxxx.com,&#x5176;&#x4E2D;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  a.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">		access_log /data/log/nginx/access.log;</span><br><span class="line">		error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">        location / {</span><br><span class="line">	           proxy_pass http://b.xxxxxxx.com;</span><br><span class="line">			       }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  a.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">		access_log /data/log/nginx/access.log;</span><br><span class="line">		error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">        location / {</span><br><span class="line">	           proxy_pass http://b.xxxxxxx.com;</span><br><span class="line">			       }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>&#x5728;&#x672C;&#x5730;&#x4FEE;&#x6539;&#x6DFB;&#x52A0;host&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;&#xFF1A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.xxxxxxx.com  xx.xx.xx.xx(B&#x7684;Ip)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a.xxxxxxx.com  xx.xx.xx.xx(B&#x7684;Ip)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;&#x4E00;&#x4E2A;<code>a.xxxxxxx.com</code>&#x7684;&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x770B;&#x662F;&#x5426;&#x80FD;&#x8BF7;&#x6C42;&#x5230;&#x5185;&#x5BB9;</p>
 </li>
@@ -128,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhiru.tech/2016/06/27/migrate-server/" data-id="ciryknr5l000s1xwwbim54oma" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/migrate-server/" data-id="cishmu77l000hkawwhizb977v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
@@ -166,7 +162,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小技能/">小技能</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a></li></ul>
     </div>
@@ -176,7 +172,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/keka/">keka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zip/">zip</a></li></ul>
     </div>
@@ -186,7 +182,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Docker/" style="font-size: 17.5px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 12.5px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 12.5px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/keka/" style="font-size: 10px;">keka</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a>
     </div>
@@ -195,9 +191,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
     </div>
   </div>
 
@@ -205,7 +201,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -222,11 +218,11 @@
           </li>
         
           <li>
-            <a href="/2016/06/01/manage-mongodb-in-docker/">进入Docker管理Mongo数据库（二）</a>
+            <a href="/2016/06/01/about-ps-stuff/">PS小技能之裁剪圆形图（一）</a>
           </li>
         
           <li>
-            <a href="/2016/06/01/about-ps-stuff/">PS小技能之裁剪圆形图（一）</a>
+            <a href="/2016/06/01/manage-mongodb-in-docker/">进入Docker管理Mongo数据库（二）</a>
           </li>
         
       </ul>
@@ -241,7 +237,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 美味二师兄<br>
+      &copy; 2016 Fenng<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
