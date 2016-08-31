@@ -5,22 +5,22 @@
   
   <title>进入Docker管理Mongo数据库（一） | Fenng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#x8FDB;&amp;#x5165;docker&amp;#x5BB9;&amp;#x5668;docker exec -i -t xxx bash
+  <meta name="description" content="进入docker容器1docker exec -i -t xxx bash
 
-&amp;#x8FDB;&amp;#x5165;mongomongo">
+进入mongo1mongo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进入Docker管理Mongo数据库（一）">
 <meta property="og:url" content="http://yoursite.com/2016/04/24/exec-docker-bsh/index.html">
 <meta property="og:site_name" content="Fenng's Blog">
-<meta property="og:description" content="&amp;#x8FDB;&amp;#x5165;docker&amp;#x5BB9;&amp;#x5668;docker exec -i -t xxx bash
+<meta property="og:description" content="进入docker容器1docker exec -i -t xxx bash
 
-&amp;#x8FDB;&amp;#x5165;mongomongo">
+进入mongo1mongo">
 <meta property="og:updated_time" content="2016-06-01T02:30:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进入Docker管理Mongo数据库（一）">
-<meta name="twitter:description" content="&amp;#x8FDB;&amp;#x5165;docker&amp;#x5BB9;&amp;#x5668;docker exec -i -t xxx bash
+<meta name="twitter:description" content="进入docker容器1docker exec -i -t xxx bash
 
-&amp;#x8FDB;&amp;#x5165;mongomongo">
+进入mongo1mongo">
   
     <link rel="alternate" href="/atom.xml" title="Fenng&#39;s Blog" type="application/atom+xml">
   
@@ -97,31 +97,31 @@
       
         <hr>
 <ul>
-<li><h4 id="&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;"><a href="#&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;" class="headerlink" title="&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;"></a>&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -i -t xxx bash</span><br></pre></td></tr></table></figure>
+<li><h4 id="进入docker容器"><a href="#进入docker容器" class="headerlink" title="进入docker容器"></a>进入docker容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -i -t xxx bash</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="&#x8FDB;&#x5165;mongo"><a href="#&#x8FDB;&#x5165;mongo" class="headerlink" title="&#x8FDB;&#x5165;mongo"></a>&#x8FDB;&#x5165;mongo</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
+<li><h4 id="进入mongo"><a href="#进入mongo" class="headerlink" title="进入mongo"></a>进入mongo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <a id="more"></a>
 <ul>
-<li><h4 id="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;"><a href="#&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;"></a>&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure>
+<li><h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;"><a href="#&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;"></a>&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">use Germany</span><br></pre></td></tr></table></figure>
+<li><h4 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use Germany</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="&#x67E5;&#x770B;&#x8868;&#x5355;"><a href="#&#x67E5;&#x770B;&#x8868;&#x5355;" class="headerlink" title="&#x67E5;&#x770B;&#x8868;&#x5355;"></a>&#x67E5;&#x770B;&#x8868;&#x5355;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">show collections</span><br></pre></td></tr></table></figure>
+<li><h4 id="查看表单"><a href="#查看表单" class="headerlink" title="查看表单"></a>查看表单</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show collections</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;"><a href="#&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;" class="headerlink" title="&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;"></a>&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">db.germany.find()</span><br></pre></td></tr></table></figure>
+<li><h4 id="查看表单内容"><a href="#查看表单内容" class="headerlink" title="查看表单内容"></a>查看表单内容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.germany.find()</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;"><a href="#&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;" class="headerlink" title="&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;"></a>&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">db.germany.remove( { } )</span><br></pre></td></tr></table></figure>
+<li><h4 id="删除该表单所有数据"><a href="#删除该表单所有数据" class="headerlink" title="删除该表单所有数据"></a>删除该表单所有数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.germany.remove( &#123; &#125; )</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;"><a href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;"></a>&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;</h4><p><a href="http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm" target="_blank" rel="external">http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm</a><br><a href="https://docs.mongodb.org/manual/reference/method/db.collection.remove/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/method/db.collection.remove/</a></p>
+<li><h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm" target="_blank" rel="external">http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm</a><br><a href="https://docs.mongodb.org/manual/reference/method/db.collection.remove/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/method/db.collection.remove/</a></p>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/24/exec-docker-bsh/" data-id="cishmu76q0005kawwxt8d3a0x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/24/exec-docker-bsh/" data-id="cisi7zvvb0004j2ww5auk0x38" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
@@ -171,7 +171,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/keka/">keka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zip/">zip</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/keka/">keka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zip/">zip</a></li></ul>
     </div>
   </div>
 
@@ -181,7 +181,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 17.5px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 12.5px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 12.5px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/keka/" style="font-size: 10px;">keka</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a>
+      <a href="/tags/Docker/" style="font-size: 17.5px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 12.5px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 12.5px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/keka/" style="font-size: 10px;">keka</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a>
     </div>
   </div>
 
@@ -203,6 +203,10 @@
       <ul>
         
           <li>
+            <a href="/2016/08/30/file-sharing-between-macos-and-windows/">局域网下共享Mac下文件给Windows</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/17/zip-keka/">Mac下使用Keka-解决windows下解压乱码的问题</a>
           </li>
         
@@ -216,10 +220,6 @@
         
           <li>
             <a href="/2016/06/01/about-ps-stuff/">PS小技能之裁剪圆形图（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/01/manage-mongodb-in-docker/">进入Docker管理Mongo数据库（二）</a>
           </li>
         
       </ul>

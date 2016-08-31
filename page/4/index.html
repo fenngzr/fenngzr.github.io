@@ -64,6 +64,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-uncompress" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/12/uncompress/" class="article-date">
+  <time datetime="2016-05-12T09:57:38.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/采石场/">采石场</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/uncompress/">总结几种解压方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="主要记录一下，自己在LINUX环境下碰到的压缩与解压缩方法"><a href="#主要记录一下，自己在LINUX环境下碰到的压缩与解压缩方法" class="headerlink" title="主要记录一下，自己在LINUX环境下碰到的压缩与解压缩方法"></a>主要记录一下，自己在LINUX环境下碰到的压缩与解压缩方法</h4><ul>
+<li><p>压缩为gz格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf filename.tar.gz /dir/log</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压gz格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xf filename.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压rar格式<br><code>需要先安装unrar工具</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unrar</span><br><span class="line">unrar x filename.rar</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/12/uncompress/" data-id="cisi7zvwe000oj2wwf4fh496j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gzip/">gzip</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tar/">tar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unrar/">unrar</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+
+  
     <article id="post-linux-log-to-local" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/24/linux-log-to-local/" class="article-date">
@@ -92,9 +146,9 @@
       
         <hr>
 <ul>
-<li>&#x6700;&#x8FD1;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x516C;&#x53F8;&#x7528;&#x4E8E;&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x603B;&#x51FA;&#x73B0;&#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5177;&#x4F53;&#x8868;&#x73B0;&#x4E3A;&#xFF1A;<br><code>1.&#x4F7F;&#x7528;SSH&#x767B;&#x5F55;&#x4E0D;&#x4E0A;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x4E0D;&#x4F1A;&#x5F39;&#x51FA;&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x680F;&#xFF09;</code><br><code>2.DNS&#x89E3;&#x6790;&#x8D85;&#x65F6;</code><br><code>3.&#x4E0D;&#x5B9A;&#x65F6;&#x51FA;&#x73B0;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x81EA;&#x884C;&#x6062;&#x590D;&#x6B63;&#x5E38;</code></li>
-<li>&#x901A;&#x8FC7;&#x5206;&#x6790;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5FAE;&#x8F6F;azure&#x865A;&#x62DF;&#x673A;&#x51FA;&#x4E86;&#x95EE;&#x9898;&#x3002;&#x5C06;&#x8BE5;&#x95EE;&#x9898;&#x53CD;&#x9988;&#x7ED9;&#x4E86;&#x5FAE;&#x8F6F;&#x7684;&#x5DE5;&#x7A0B;&#x5E08;&#x540E;&#xFF0C;&#x6211;&#x7684;&#x96BE;&#x9898;&#x6765;&#x4E86;&#xFF1A;&#x5FAE;&#x8F6F;&#x5DE5;&#x7A0B;&#x5E08;&#x9700;&#x8981;&#x6211;&#x63D0;&#x4F9B;&#x8FD9;&#x53F0;&#x865A;&#x62DF;&#x673A;&#x4E2D; /var/ &#x4E0B;&#x6240;&#x6709;log&#xFF0C;&#x4F9B;&#x4ED6;&#x4EEC;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;<h3 id="&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;"><a href="#&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;" class="headerlink" title="&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;"></a>&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;</h3></li>
-<li>&#x5C06;&#x865A;&#x62DF;&#x673A;&#x4E0B;/var/&#x4E0B;&#x7684;&#x6240;&#x6709;log&#xFF0C;&#x6253;&#x5305;&#x5E76;&#x5BFC;&#x51FA;&#x81F3;&#x672C;&#x5730;&#xFF0C;&#x901A;&#x8FC7;&#x90AE;&#x4EF6;&#x63D0;&#x4F9B;&#x7ED9;&#x5FAE;&#x8F6F;&#x5DE5;&#x7A0B;&#x5E08;</li></ul>
+<li>最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：<br><code>1.使用SSH登录不上服务器（不会弹出密码输入栏）</code><br><code>2.DNS解析超时</code><br><code>3.不定时出现无法连接的情况，之后会自行恢复正常</code></li>
+<li>通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。<h3 id="问题整理："><a href="#问题整理：" class="headerlink" title="问题整理："></a>问题整理：</h3></li>
+<li>将虚拟机下/var/下的所有log，打包并导出至本地，通过邮件提供给微软工程师
         
           <p class="article-more-link">
             <a href="/2016/04/24/linux-log-to-local/#more">Read More</a>
@@ -103,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/24/linux-log-to-local/" data-id="cishmu7700009kawwfolyypc2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/24/linux-log-to-local/" data-id="cisi7zvvr0009j2wwsw9ma3ev" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Log/">Log</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
@@ -144,8 +198,8 @@
       
         <hr>
 <ul>
-<li><h4 id="&#x4EE5;Json&#x6587;&#x4EF6;&#x4E3A;&#x4F8B;"><a href="#&#x4EE5;Json&#x6587;&#x4EF6;&#x4E3A;&#x4F8B;" class="headerlink" title="&#x4EE5;Json&#x6587;&#x4EF6;&#x4E3A;&#x4F8B;"></a>&#x4EE5;Json&#x6587;&#x4EF6;&#x4E3A;&#x4F8B;</h4></li>
-<li><h4 id="&#x5C06;&#x6587;&#x4EF6;&#x653E;&#x81F3;&#x670D;&#x52A1;&#x5668;&#x7684;&#x67D0;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;"><a href="#&#x5C06;&#x6587;&#x4EF6;&#x653E;&#x81F3;&#x670D;&#x52A1;&#x5668;&#x7684;&#x67D0;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;" class="headerlink" title="&#x5C06;&#x6587;&#x4EF6;&#x653E;&#x81F3;&#x670D;&#x52A1;&#x5668;&#x7684;&#x67D0;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;"></a>&#x5C06;&#x6587;&#x4EF6;&#x653E;&#x81F3;&#x670D;&#x52A1;&#x5668;&#x7684;&#x67D0;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/User/project/ABC.json</span><br><span class="line">//&#x6BD4;&#x5982;&#x8BB2;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;ABC&#x7684;Json&#x6587;&#x4EF6;&#x653E;&#x81F3;project&#x76EE;&#x5F55;&#x4E0B;</span><br></pre></td></tr></table></figure>
+<li><h4 id="以Json文件为例"><a href="#以Json文件为例" class="headerlink" title="以Json文件为例"></a>以Json文件为例</h4></li>
+<li><h4 id="将文件放至服务器的某一目录下"><a href="#将文件放至服务器的某一目录下" class="headerlink" title="将文件放至服务器的某一目录下"></a>将文件放至服务器的某一目录下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/User/project/ABC.json</span><br><span class="line">//比如讲一个名为ABC的Json文件放至project目录下</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
         
@@ -156,64 +210,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/24/url-for-file/" data-id="cishmu77u000qkawwkz9xakxe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/24/url-for-file/" data-id="cisi7zvwj000sj2wwgqdl9d0l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Url/">Url</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-
-  
-    <article id="post-exec-docker-bsh" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/24/exec-docker-bsh/" class="article-date">
-  <time datetime="2016-04-24T10:20:55.000Z" itemprop="datePublished">2016-04-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/采石场/">采石场</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/24/exec-docker-bsh/">进入Docker管理Mongo数据库（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<ul>
-<li><h4 id="&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;"><a href="#&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;" class="headerlink" title="&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;"></a>&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -i -t xxx bash</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="&#x8FDB;&#x5165;mongo"><a href="#&#x8FDB;&#x5165;mongo" class="headerlink" title="&#x8FDB;&#x5165;mongo"></a>&#x8FDB;&#x5165;mongo</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2016/04/24/exec-docker-bsh/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/24/exec-docker-bsh/" data-id="cishmu76q0005kawwxt8d3a0x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
     </footer>
   </div>
@@ -246,7 +246,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/keka/">keka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zip/">zip</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/keka/">keka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zip/">zip</a></li></ul>
     </div>
   </div>
 
@@ -256,7 +256,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 17.5px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 12.5px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 12.5px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/keka/" style="font-size: 10px;">keka</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a>
+      <a href="/tags/Docker/" style="font-size: 17.5px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 12.5px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 12.5px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/keka/" style="font-size: 10px;">keka</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a>
     </div>
   </div>
 
@@ -278,6 +278,10 @@
       <ul>
         
           <li>
+            <a href="/2016/08/30/file-sharing-between-macos-and-windows/">局域网下共享Mac下文件给Windows</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/17/zip-keka/">Mac下使用Keka-解决windows下解压乱码的问题</a>
           </li>
         
@@ -291,10 +295,6 @@
         
           <li>
             <a href="/2016/06/01/about-ps-stuff/">PS小技能之裁剪圆形图（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/01/manage-mongodb-in-docker/">进入Docker管理Mongo数据库（二）</a>
           </li>
         
       </ul>
