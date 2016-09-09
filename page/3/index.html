@@ -64,14 +64,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-about-ps-stuff" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-manage-mongodb-in-docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/01/about-ps-stuff/" class="article-date">
+    <a href="/2016/06/01/manage-mongodb-in-docker/" class="article-date">
   <time datetime="2016-06-01T10:20:55.000Z" itemprop="datePublished">2016-06-01</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/小技能/">小技能</a>
+    <a class="article-category-link" href="/categories/采石场/">采石场</a>
   </div>
 
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/about-ps-stuff/">PS小技能之裁剪圆形图（一）</a>
+      <a class="article-title" href="/2016/06/01/manage-mongodb-in-docker/">进入Docker管理Mongo数据库（二）</a>
     </h1>
   
 
@@ -90,14 +90,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="将一张方形图，做成圆形图，最简单的办法"><a href="#将一张方形图，做成圆形图，最简单的办法" class="headerlink" title="将一张方形图，做成圆形图，最简单的办法"></a>将一张方形图，做成圆形图，最简单的办法</h3><h4 id="1-使用椭圆选择工具，选择所需圆形（比如90-90）"><a href="#1-使用椭圆选择工具，选择所需圆形（比如90-90）" class="headerlink" title="1.使用椭圆选择工具，选择所需圆形（比如90*90）"></a>1.使用椭圆选择工具，选择所需圆形（比如90*90）</h4><h4 id="2-新建图层，大小为（90-90），背景为透明"><a href="#2-新建图层，大小为（90-90），背景为透明" class="headerlink" title="2.新建图层，大小为（90*90），背景为透明"></a>2.新建图层，大小为（90*90），背景为透明</h4><h4 id="3-使用选择工具，将1选择的圆形，直接拖至2"><a href="#3-使用选择工具，将1选择的圆形，直接拖至2" class="headerlink" title="3.使用选择工具，将1选择的圆形，直接拖至2"></a>3.使用选择工具，将<code>1</code>选择的圆形，直接拖至<code>2</code></h4><h4 id="4-保存2，格式为PNG即可"><a href="#4-保存2，格式为PNG即可" class="headerlink" title="4.保存2，格式为PNG即可"></a>4.保存<code>2</code>，格式为PNG即可</h4>
+        <p>最近总碰到数据库管理的问题，总结一下。</p>
+<ul>
+<li><p>进入数据库后，查找某一条数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.collection.find(&#123;projectId:12&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;111&quot;), &quot;isDelete&quot; : &quot;0&quot;, &quot;pubTime&quot; : &quot;&quot;, &quot;projectCreateTime&quot; : , &quot;projectStatus&quot; : 1, &quot;projectId&quot; : 12, &quot;masterId&quot; : &quot;&quot;, &quot;picLinks&quot; : &quot;&quot;, &quot;projectComment&quot; : &quot;&quot;, &quot;title&quot; : &quot;【&quot;, &quot;list&quot; : [ &quot;20267271&quot;, &quot;20267269&quot;, &quot;20267283&quot;, &quot;20267265&quot;, &quot;20267282&quot;, &quot;20267270&quot;, &quot;20267279&quot;, &quot;20267255&quot;, &quot;20262041&quot;, &quot;20267268&quot;, &quot;20260774&quot;, &quot;20268485&quot;, &quot;20269391&quot;, &quot;20270718&quot;, &quot;20270695&quot;, &quot;20270655&quot;, &quot;20270586&quot;, &quot;20271744&quot;, &quot;20272525&quot; ], &quot;newsType&quot; : &quot;2&quot;, &quot;imges&quot; : [ ], &quot;_abstract&quot; : &quot;0&quot;, &quot;__v&quot; : 0 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/01/manage-mongodb-in-docker/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/01/about-ps-stuff/" data-id="cisv7lcjj0001cqfy4t88udbv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/01/manage-mongodb-in-docker/" data-id="cisvbm8ei000jluww0zg67vux" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Icon/">Icon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Photoshop/">Photoshop</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
     </footer>
   </div>
@@ -152,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/31/microsoft-vm-open-swapfile/" data-id="cisv7lckg000gcqfy4p5e92bb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/31/microsoft-vm-open-swapfile/" data-id="cisvbm8eo000mluwwm855jb75" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swap/">swap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li></ul>
@@ -207,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/30/check-logs/" data-id="cisv7lcjs0004cqfyfu3q6spl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/30/check-logs/" data-id="cisvbm8dp0004luwwxa4geez1" class="article-share-link">Share</a>
       
       
     </footer>

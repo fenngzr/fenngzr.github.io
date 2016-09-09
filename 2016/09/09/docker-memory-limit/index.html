@@ -5,19 +5,19 @@
   
   <title>Docker内存限制的两个命令 | Fenng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。">
+  <meta name="description" content="通过docker在服务器上部署项目，有时候会出现内存紧张，导致服务器性能下降，甚至宕机。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配，每个container分配的内存，默认是服务器的内存，当某一个container内存泄露，或者占用内存过大，就把服务器内存都使用完了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker内存限制的两个命令">
 <meta property="og:url" content="http://yoursite.com/2016/09/09/docker-memory-limit/index.html">
 <meta property="og:site_name" content="Fenng's Blog">
-<meta property="og:description" content="通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。">
+<meta property="og:description" content="通过docker在服务器上部署项目，有时候会出现内存紧张，导致服务器性能下降，甚至宕机。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配，每个container分配的内存，默认是服务器的内存，当某一个container内存泄露，或者占用内存过大，就把服务器内存都使用完了。">
 <meta property="og:image" content="http://yoursite.com/docker1.png">
 <meta property="og:image" content="http://yoursite.com/docker2.png">
 <meta property="og:image" content="http://yoursite.com/docker3.png">
-<meta property="og:updated_time" content="2016-09-09T03:36:20.000Z">
+<meta property="og:updated_time" content="2016-09-09T05:26:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker内存限制的两个命令">
-<meta name="twitter:description" content="通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。">
+<meta name="twitter:description" content="通过docker在服务器上部署项目，有时候会出现内存紧张，导致服务器性能下降，甚至宕机。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配，每个container分配的内存，默认是服务器的内存，当某一个container内存泄露，或者占用内存过大，就把服务器内存都使用完了。">
 <meta name="twitter:image" content="http://yoursite.com/docker1.png">
   
     <link rel="alternate" href="/atom.xml" title="Fenng&#39;s Blog" type="application/atom+xml">
@@ -93,7 +93,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。<br>可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。<br>通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。<br><a id="more"></a></p>
+        <p>通过docker在服务器上部署项目，有时候会出现内存紧张，导致服务器性能下降，甚至宕机。<br>可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配，每个container分配的内存，默认是服务器的内存，当某一个container内存泄露，或者占用内存过大，就把服务器内存都使用完了。<br><a id="more"></a></p>
 <p><img src="docker1.png" alt="默认内存"></p>
 <p>去<a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="external">Docker</a>官网，找到了限制内存的方法，如下：</p>
 <h4 id="一、-m和–memory-swap命令"><a href="#一、-m和–memory-swap命令" class="headerlink" title="一、-m和–memory-swap命令"></a>一、-m和–memory-swap命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -m 10M --memory-swap 20M ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure>
@@ -114,7 +114,7 @@ Reboot your system.</code><br>重启完之后，再重新跑以上命令，发�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/09/docker-memory-limit/" data-id="cisv7lcjb0000cqfyvp4pdgjv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/09/docker-memory-limit/" data-id="cisvbm8d50000luww6bxesvqw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Memroy/">Memroy</a></li></ul>
