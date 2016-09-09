@@ -51,9 +51,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -90,9 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。<br>可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。<br>通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。<br><img src="docker1.png" alt="默认内存"></p>
-<p>去<a href="https://docs.docker.com/engine/reference/run/">Docker</a>官网，找到了限制内存的方法，如下：</p>
-<h4 id="一、-m和–memory-swap命令"><a href="#一、-m和–memory-swap命令" class="headerlink" title="一、-m和–memory-swap命令"></a>一、-m和–memory-swap命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -m 10M --memory-swap 20M ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure>
+        <p>通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。<br>可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。<br>通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。<br>
         
           <p class="article-more-link">
             <a href="/2016/09/09/docker-memory-limit/#more">Read More</a>
@@ -101,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/09/docker-memory-limit/" data-id="cisv6hnc000036mfym3c0q0yp" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/09/docker-memory-limit/" data-id="cisv7lcjb0000cqfyvp4pdgjv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Memroy/">Memroy</a></li></ul>
@@ -149,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/30/file-sharing-between-macos-and-windows/" data-id="cisv6hnc400056mfyz49rg73y" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/30/file-sharing-between-macos-and-windows/" data-id="cisv7lcjw0007cqfygy2966ua" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -200,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/17/zip-keka/" data-id="cisv6hnfo002b6mfy7madxdcw" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/17/zip-keka/" data-id="cisv7lcl10011cqfyd0b05mnc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/keka/">keka</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zip/">zip</a></li></ul>
@@ -224,7 +222,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小技能/">小技能</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/逗趣图集/">逗趣图集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/采石场/">采石场</a></li></ul>
     </div>
@@ -234,7 +232,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Icon/">Icon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memroy/">Memroy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photoshop/">Photoshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Url/">Url</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gzip/">gzip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/keka/">keka</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swap/">swap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swapfile/">swapfile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tar/">tar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu14-04/">ubuntu14.04</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrar/">unrar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zip/">zip</a></li></ul>
     </div>
@@ -244,7 +242,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Docker/" style="font-size: 20px;">Docker</a> <a href="/tags/Filezilla/" style="font-size: 10px;">Filezilla</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Icon/" style="font-size: 10px;">Icon</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/Memroy/" style="font-size: 10px;">Memroy</a> <a href="/tags/MongoDB/" style="font-size: 16.67px;">MongoDB</a> <a href="/tags/Mongodb/" style="font-size: 13.33px;">Mongodb</a> <a href="/tags/Nginx/" style="font-size: 13.33px;">Nginx</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/gzip/" style="font-size: 10px;">gzip</a> <a href="/tags/keka/" style="font-size: 10px;">keka</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swap/" style="font-size: 10px;">swap</a> <a href="/tags/swapfile/" style="font-size: 10px;">swapfile</a> <a href="/tags/tar/" style="font-size: 10px;">tar</a> <a href="/tags/ubuntu14-04/" style="font-size: 10px;">ubuntu14.04</a> <a href="/tags/unrar/" style="font-size: 10px;">unrar</a> <a href="/tags/zip/" style="font-size: 10px;">zip</a>
     </div>
@@ -263,7 +261,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -300,7 +298,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 Fenng<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
