@@ -3,17 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mot-clé: Docker | Fenng&#39;s Blog</title>
+  <title>Docker内存限制的两个命令 | Fenng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fenng's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Docker/page/2/index.html">
+  <meta name="description" content="通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。
+去Docker官网，找到了限制内存的方法，如下：
+一、-m和–memory-swa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker内存限制的两个命令">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/docker-memory-limit/index.html">
 <meta property="og:site_name" content="Fenng's Blog">
-<meta property="og:description">
+<meta property="og:description" content="通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。
+去Docker官网，找到了限制内存的方法，如下：
+一、-m和–memory-swa">
+<meta property="og:image" content="http://yoursite.com/docker1.png">
+<meta property="og:image" content="http://yoursite.com/docker2.png">
+<meta property="og:image" content="http://yoursite.com/docker3.png">
+<meta property="og:updated_time" content="2016-09-09T03:07:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fenng's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Docker内存限制的两个命令">
+<meta name="twitter:description" content="通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。
+去Docker官网，找到了限制内存的方法，如下：
+一、-m和–memory-swa">
+<meta name="twitter:image" content="http://yoursite.com/docker1.png">
   
     <link rel="alternate" href="/atom.xml" title="Fenng&#39;s Blog" type="application/atom+xml">
   
@@ -62,82 +73,76 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/06/01/manage-mongodb-in-docker/" class="archive-article-date">
-  <time datetime="2016-06-01T10:20:55.000Z" itemprop="datePublished">Jun 1</time>
+        <section id="main"><article id="post-docker-memory-limit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/09/docker-memory-limit/" class="article-date">
+  <time datetime="2016-09-09T02:31:38.000Z" itemprop="datePublished">2016-09-09</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/采石场/">采石场</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/01/manage-mongodb-in-docker/">进入Docker管理Mongo数据库（二）</a>
+    <h1 class="article-title" itemprop="name">
+      Docker内存限制的两个命令
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/24/exec-docker-bsh/" class="archive-article-date">
-  <time datetime="2016-04-24T10:20:55.000Z" itemprop="datePublished">Apr 24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/24/exec-docker-bsh/">进入Docker管理Mongo数据库（一）</a>
-    </h1>
-  
+        <p>通过docker在服务器上部署项目，常常会出现内存不够使用的情况，导致程序挂掉了。<br>可能的原因是，使用docker启动container时，没有使用命令对其进行内存分配。<br>通过docker stats命令，可以看到，每个container默认分配了2G的内存，同时也能发现，有的container根本用不到这么大的内存。<br><img src="docker1.png" alt="默认内存"></p>
+<p>去<a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="external">Docker</a>官网，找到了限制内存的方法，如下：</p>
+<h4 id="一、-m和–memory-swap命令"><a href="#一、-m和–memory-swap命令" class="headerlink" title="一、-m和–memory-swap命令"></a>一、-m和–memory-swap命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -m 10M --memory-swap 20M ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>这个命令的意思是，限制container只能使用10M的内存+10M的swap空间。<br>但我在使用这个命令时，出现了报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.</span><br></pre></td></tr></table></figure></p>
+<p>使用docker ps命令发现，container正常跑起来了<br><img src="docker2.png" alt="限制内存"></p>
+<p>为了能正常使用–memory-swap命令，找了下解决办法，不过需要重启服务器才能生效<br><code>To enable memory and swap on system using GNU GRUB (GNU GRand Unified Bootloader), do the following:
+Log into Ubuntu as a user with sudo privileges.
+Edit the /etc/default/grub file.
+Set the GRUB_CMDLINE_LINUX value as follows:
+GRUB_CMDLINE_LINUX=&quot;cgroup_enable=memory swapaccount=1&quot;
+Save and close the file.
+Update GRUB.
+$ sudo update-grub
+Reboot your system.</code><br>重启完之后，再重新跑以上命令，发现container跑起来了，不过过了一会，就因为内存不够挂掉了。<br><img src="docker3.png" alt="停止运行"></p>
+<h4 id="二、-m命令"><a href="#二、-m命令" class="headerlink" title="二、-m命令"></a>二、-m命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -m 20M ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure>
+<p>这个命令只使用了-m参数，作用是限定了这个容器只能使用20M的内存以及20M的swap存储</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/04/24/install-docker-nodejs-nginx-git/" class="archive-article-date">
-  <time datetime="2016-04-24T09:41:28.000Z" itemprop="datePublished">Apr 24</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/24/install-docker-nodejs-nginx-git/">安装Docker/Nginx/Nodejs/Git/Mongodb</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/09/docker-memory-limit/" data-id="cisv6hnc000036mfym3c0q0yp" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Memroy/">Memroy</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/30/file-sharing-between-macos-and-windows/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">局域网下共享Mac下文件给Windows</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/tags/Docker/">&laquo; __('prev')</a><a class="page-number" href="/tags/Docker/">1</a><span class="page-number current">2</span>
-  </nav>
+ 
 </section>
         
           <aside id="sidebar">
