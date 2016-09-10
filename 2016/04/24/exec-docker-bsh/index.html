@@ -5,22 +5,52 @@
   
   <title>进入Docker管理Mongo数据库（一） | Fenng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="进入docker容器1docker exec -i -t xxx bash
-
-进入mongo1mongo">
+  <meta name="description" content="&amp;#x8FDB;&amp;#x5165;docker&amp;#x5BB9;&amp;#x5668;
+    
+      
+        
+          1
+          docker exec -i -t xxx bash
+        
+      
+    
+  
+  
+    
+      &amp;#x8FDB;&amp;#x5165;mongo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进入Docker管理Mongo数据库（一）">
 <meta property="og:url" content="http://yoursite.com/2016/04/24/exec-docker-bsh/index.html">
 <meta property="og:site_name" content="Fenng's Blog">
-<meta property="og:description" content="进入docker容器1docker exec -i -t xxx bash
-
-进入mongo1mongo">
+<meta property="og:description" content="&amp;#x8FDB;&amp;#x5165;docker&amp;#x5BB9;&amp;#x5668;
+    
+      
+        
+          1
+          docker exec -i -t xxx bash
+        
+      
+    
+  
+  
+    
+      &amp;#x8FDB;&amp;#x5165;mongo">
 <meta property="og:updated_time" content="2016-06-01T02:30:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进入Docker管理Mongo数据库（一）">
-<meta name="twitter:description" content="进入docker容器1docker exec -i -t xxx bash
-
-进入mongo1mongo">
+<meta name="twitter:description" content="&amp;#x8FDB;&amp;#x5165;docker&amp;#x5BB9;&amp;#x5668;
+    
+      
+        
+          1
+          docker exec -i -t xxx bash
+        
+      
+    
+  
+  
+    
+      &amp;#x8FDB;&amp;#x5165;mongo">
   
     <link rel="alternate" href="/atom.xml" title="Fenng&#39;s Blog" type="application/atom+xml">
   
@@ -97,31 +127,103 @@
       
         <hr>
 <ul>
-<li><h4 id="进入docker容器"><a href="#进入docker容器" class="headerlink" title="进入docker容器"></a>进入docker容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -i -t xxx bash</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="进入mongo"><a href="#进入mongo" class="headerlink" title="进入mongo"></a>进入mongo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
-</li>
+  <li>
+    <h4 id="&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;">
+      <a href="#&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;" class="headerlink" title="&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;"></a>&#x8FDB;&#x5165;docker&#x5BB9;&#x5668;</h4>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -i -t xxx bash</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+  <li>
+    <h4 id="&#x8FDB;&#x5165;mongo">
+      <a href="#&#x8FDB;&#x5165;mongo" class="headerlink" title="&#x8FDB;&#x5165;mongo"></a>&#x8FDB;&#x5165;mongo</h4>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">mongo</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
 </ul>
 <a id="more"></a>
 <ul>
-<li><h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use Germany</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="查看表单"><a href="#查看表单" class="headerlink" title="查看表单"></a>查看表单</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show collections</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="查看表单内容"><a href="#查看表单内容" class="headerlink" title="查看表单内容"></a>查看表单内容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.germany.find()</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="删除该表单所有数据"><a href="#删除该表单所有数据" class="headerlink" title="删除该表单所有数据"></a>删除该表单所有数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.germany.remove( &#123; &#125; )</span><br></pre></td></tr></table></figure>
-</li>
-<li><h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><p><a href="http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm" target="_blank" rel="external">http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm</a><br><a href="https://docs.mongodb.org/manual/reference/method/db.collection.remove/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/method/db.collection.remove/</a></p>
-</li>
+  <li>
+    <h4 id="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;">
+      <a href="#&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;"></a>&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;</h4>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">show dbs</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+  <li>
+    <h4 id="&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;">
+      <a href="#&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;"></a>&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;</h4>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">use Germany</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+  <li>
+    <h4 id="&#x67E5;&#x770B;&#x8868;&#x5355;">
+      <a href="#&#x67E5;&#x770B;&#x8868;&#x5355;" class="headerlink" title="&#x67E5;&#x770B;&#x8868;&#x5355;"></a>&#x67E5;&#x770B;&#x8868;&#x5355;</h4>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">show collections</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+  <li>
+    <h4 id="&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;">
+      <a href="#&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;" class="headerlink" title="&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;"></a>&#x67E5;&#x770B;&#x8868;&#x5355;&#x5185;&#x5BB9;</h4>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">db.germany.find()</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+  <li>
+    <h4 id="&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;">
+      <a href="#&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;" class="headerlink" title="&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;"></a>&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5355;&#x6240;&#x6709;&#x6570;&#x636E;</h4>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">db.germany.remove( { } )</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+  <li>
+    <h4 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;">
+      <a href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;" class="headerlink" title="&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;"></a>&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;</h4>
+    <p><a href="http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm" target="_blank" rel="external">http://www.tutorialspoint.com/mongodb/mongodb_create_database.htm</a><br><a href="https://docs.mongodb.org/manual/reference/method/db.collection.remove/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/method/db.collection.remove/</a></p>
+  </li>
 </ul>
-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/24/exec-docker-bsh/" data-id="cisvbm8dr0005luww4eyhhq1m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/24/exec-docker-bsh/" data-id="cisvq05nr0007gwwwkkyvi7oi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>

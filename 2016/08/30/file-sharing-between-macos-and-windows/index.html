@@ -5,25 +5,16 @@
   
   <title>局域网下共享Mac下文件给Windows | Fenng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="想把Mac上已经安装好的androidSDK文件拷贝到windows，但文件夹实在是太大，达到了40GB。拿移动硬盘拷贝，发现移动硬盘只可读，不可写入。再加上硬盘本来被分了好几个区，单区都没有40GB空余。于是想到使用这个办法：
-在Mac终端进入想要共享的文件夹1cd /Users/zr/Documents
-开启HTTPServer1python -m SimpleHTTPServer
-这时会输出">
+  <meta name="description" content="&amp;#x60F3;&amp;#x628A;Mac&amp;#x4E0A;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B89;&amp;#x88C5;&amp;#x597D;&amp;#x7684;androidSDK&amp;#x6587;&amp;#x4EF6;&amp;#x62F7;&amp;#x8D1D;&amp;#x5230;windows&amp;#xFF0C;&amp;#x4F46;&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x5B9E;&amp;#x5728;&amp;#x662F;&amp;#x5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="局域网下共享Mac下文件给Windows">
 <meta property="og:url" content="http://yoursite.com/2016/08/30/file-sharing-between-macos-and-windows/index.html">
 <meta property="og:site_name" content="Fenng's Blog">
-<meta property="og:description" content="想把Mac上已经安装好的androidSDK文件拷贝到windows，但文件夹实在是太大，达到了40GB。拿移动硬盘拷贝，发现移动硬盘只可读，不可写入。再加上硬盘本来被分了好几个区，单区都没有40GB空余。于是想到使用这个办法：
-在Mac终端进入想要共享的文件夹1cd /Users/zr/Documents
-开启HTTPServer1python -m SimpleHTTPServer
-这时会输出">
+<meta property="og:description" content="&amp;#x60F3;&amp;#x628A;Mac&amp;#x4E0A;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B89;&amp;#x88C5;&amp;#x597D;&amp;#x7684;androidSDK&amp;#x6587;&amp;#x4EF6;&amp;#x62F7;&amp;#x8D1D;&amp;#x5230;windows&amp;#xFF0C;&amp;#x4F46;&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x5B9E;&amp;#x5728;&amp;#x662F;&amp;#x5">
 <meta property="og:updated_time" content="2016-08-30T15:27:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="局域网下共享Mac下文件给Windows">
-<meta name="twitter:description" content="想把Mac上已经安装好的androidSDK文件拷贝到windows，但文件夹实在是太大，达到了40GB。拿移动硬盘拷贝，发现移动硬盘只可读，不可写入。再加上硬盘本来被分了好几个区，单区都没有40GB空余。于是想到使用这个办法：
-在Mac终端进入想要共享的文件夹1cd /Users/zr/Documents
-开启HTTPServer1python -m SimpleHTTPServer
-这时会输出">
+<meta name="twitter:description" content="&amp;#x60F3;&amp;#x628A;Mac&amp;#x4E0A;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B89;&amp;#x88C5;&amp;#x597D;&amp;#x7684;androidSDK&amp;#x6587;&amp;#x4EF6;&amp;#x62F7;&amp;#x8D1D;&amp;#x5230;windows&amp;#xFF0C;&amp;#x4F46;&amp;#x6587;&amp;#x4EF6;&amp;#x5939;&amp;#x5B9E;&amp;#x5728;&amp;#x662F;&amp;#x5">
   
     <link rel="alternate" href="/atom.xml" title="Fenng&#39;s Blog" type="application/atom+xml">
   
@@ -98,16 +89,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>想把Mac上已经安装好的androidSDK文件拷贝到windows，但文件夹实在是太大，达到了40GB。<br>拿移动硬盘拷贝，发现移动硬盘只可读，不可写入。再加上硬盘本来被分了好几个区，单区都没有40GB空余。<br>于是想到使用这个办法：</p>
-<p>在Mac终端进入想要共享的文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/zr/Documents</span><br></pre></td></tr></table></figure></p>
-<p>开启HTTPServer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer</span><br></pre></td></tr></table></figure></p>
-<p>这时会输出如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serving HTTP on 0.0.0.0 port 8000 ...</span><br></pre></td></tr></table></figure></p>
-<p>在浏览器中打开以下地址便可访问共享文件内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://mac-ip:8000 **比如http://192.168.1.102:8000**</span><br></pre></td></tr></table></figure></p>
-
+        <p>&#x60F3;&#x628A;Mac&#x4E0A;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x597D;&#x7684;androidSDK&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;windows&#xFF0C;&#x4F46;&#x6587;&#x4EF6;&#x5939;&#x5B9E;&#x5728;&#x662F;&#x592A;&#x5927;&#xFF0C;&#x8FBE;&#x5230;&#x4E86;40GB&#x3002;<br>&#x62FF;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x62F7;&#x8D1D;&#xFF0C;&#x53D1;&#x73B0;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x53EA;&#x53EF;&#x8BFB;&#xFF0C;&#x4E0D;&#x53EF;&#x5199;&#x5165;&#x3002;&#x518D;&#x52A0;&#x4E0A;&#x786C;&#x76D8;&#x672C;&#x6765;&#x88AB;&#x5206;&#x4E86;&#x597D;&#x51E0;&#x4E2A;&#x533A;&#xFF0C;&#x5355;&#x533A;&#x90FD;&#x6CA1;&#x6709;40GB&#x7A7A;&#x4F59;&#x3002;<br>&#x4E8E;&#x662F;&#x60F3;&#x5230;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x529E;&#x6CD5;&#xFF1A;</p>
+<p>&#x5728;Mac&#x7EC8;&#x7AEF;&#x8FDB;&#x5165;&#x60F3;&#x8981;&#x5171;&#x4EAB;&#x7684;&#x6587;&#x4EF6;&#x5939;<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+        <td class="code"><pre><span class="line">cd /Users/zr/Documents</span><br></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>&#x5F00;&#x542F;HTTPServer<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+        <td class="code"><pre><span class="line">python -m SimpleHTTPServer</span><br></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>&#x8FD9;&#x65F6;&#x4F1A;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#x5185;&#x5BB9;<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+        <td class="code"><pre><span class="line">Serving HTTP on 0.0.0.0 port 8000 ...</span><br></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00;&#x4EE5;&#x4E0B;&#x5730;&#x5740;&#x4FBF;&#x53EF;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x5185;&#x5BB9;<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+        <td class="code"><pre><span class="line">http://mac-ip:8000 **&#x6BD4;&#x5982;http://192.168.1.102:8000**</span><br></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/30/file-sharing-between-macos-and-windows/" data-id="cisvbm8dv0007luww0c2yzm4m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/30/file-sharing-between-macos-and-windows/" data-id="cisvq05nd0005gwwwmzp5r9xa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>

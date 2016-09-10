@@ -5,22 +5,16 @@
   
   <title>服务器日志导出至本地 | Fenng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：1.使用SSH登录不上服务器（不会弹出密码输入栏）2.DNS解析超时3.不定时出现无法连接的情况，之后会自行恢复正常
-通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。问题整理：
-将虚拟机下/var/下的">
+  <meta name="description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x4E00;&amp;#x6BB5;&amp;#x65F6;&amp;#x95F4;&amp;#xFF0C;&amp;#x516C;&amp;#x53F8;&amp;#x7528;&amp;#x4E8E;&amp;#x5F00;&amp;#x53D1;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7684;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#xFF0C;&amp;#x603B;&amp;#x51FA;&amp;#x73B0;&amp;#x8FDE;&amp;#x6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器日志导出至本地">
 <meta property="og:url" content="http://yoursite.com/2016/04/24/linux-log-to-local/index.html">
 <meta property="og:site_name" content="Fenng's Blog">
-<meta property="og:description" content="最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：1.使用SSH登录不上服务器（不会弹出密码输入栏）2.DNS解析超时3.不定时出现无法连接的情况，之后会自行恢复正常
-通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。问题整理：
-将虚拟机下/var/下的">
+<meta property="og:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x4E00;&amp;#x6BB5;&amp;#x65F6;&amp;#x95F4;&amp;#xFF0C;&amp;#x516C;&amp;#x53F8;&amp;#x7528;&amp;#x4E8E;&amp;#x5F00;&amp;#x53D1;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7684;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#xFF0C;&amp;#x603B;&amp;#x51FA;&amp;#x73B0;&amp;#x8FDE;&amp;#x6">
 <meta property="og:updated_time" content="2016-05-30T15:16:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器日志导出至本地">
-<meta name="twitter:description" content="最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：1.使用SSH登录不上服务器（不会弹出密码输入栏）2.DNS解析超时3.不定时出现无法连接的情况，之后会自行恢复正常
-通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。问题整理：
-将虚拟机下/var/下的">
+<meta name="twitter:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x4E00;&amp;#x6BB5;&amp;#x65F6;&amp;#x95F4;&amp;#xFF0C;&amp;#x516C;&amp;#x53F8;&amp;#x7528;&amp;#x4E8E;&amp;#x5F00;&amp;#x53D1;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7684;&amp;#x670D;&amp;#x52A1;&amp;#x5668;&amp;#xFF0C;&amp;#x603B;&amp;#x51FA;&amp;#x73B0;&amp;#x8FDE;&amp;#x6">
   
     <link rel="alternate" href="/atom.xml" title="Fenng&#39;s Blog" type="application/atom+xml">
   
@@ -97,32 +91,61 @@
       
         <hr>
 <ul>
-<li>最近一段时间，公司用于开发测试的服务器，总出现连接超时的情况。具体表现为：<br><code>1.使用SSH登录不上服务器（不会弹出密码输入栏）</code><br><code>2.DNS解析超时</code><br><code>3.不定时出现无法连接的情况，之后会自行恢复正常</code></li>
-<li>通过分析，判断是微软azure虚拟机出了问题。将该问题反馈给了微软的工程师后，我的难题来了：微软工程师需要我提供这台虚拟机中 /var/ 下所有log，供他们进行分析。<h3 id="问题整理："><a href="#问题整理：" class="headerlink" title="问题整理："></a>问题整理：</h3></li>
-<li>将虚拟机下/var/下的所有log，打包并导出至本地，通过邮件提供给微软工程师<a id="more"></a>
-<h3 id="解决思路分三步"><a href="#解决思路分三步" class="headerlink" title="解决思路分三步:"></a>解决思路分三步:</h3><h4 id="（1）ssh登陆"><a href="#（1）ssh登陆" class="headerlink" title="（1）ssh登陆"></a>（1）ssh登陆</h4></li>
-<li>等服务器自动恢复正常后，ssh输入账号密码，登陆成功<h4 id="（2）打包var下的所有log"><a href="#（2）打包var下的所有log" class="headerlink" title="（2）打包var下的所有log"></a>（2）打包var下的所有log</h4></li>
-<li><p>ssh登陆成功之后，找到/var/log目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/<span class="built_in">log</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>发现/var/log目录下，日志很多，于是决定将该目录下的所有文件压缩打包为1个文件。</p>
-</li>
-<li>Google到tar.gz格式打包整个目录的代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zcvf archive-name.tar.gz directory-name</span><br></pre></td></tr></table></figure>
-</li>
+  <li>&#x6700;&#x8FD1;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x516C;&#x53F8;&#x7528;&#x4E8E;&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x603B;&#x51FA;&#x73B0;&#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5177;&#x4F53;&#x8868;&#x73B0;&#x4E3A;&#xFF1A;<br><code>1.&#x4F7F;&#x7528;SSH&#x767B;&#x5F55;&#x4E0D;&#x4E0A;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x4E0D;&#x4F1A;&#x5F39;&#x51FA;&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x680F;&#xFF09;</code><br><code>2.DNS&#x89E3;&#x6790;&#x8D85;&#x65F6;</code><br><code>3.&#x4E0D;&#x5B9A;&#x65F6;&#x51FA;&#x73B0;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x81EA;&#x884C;&#x6062;&#x590D;&#x6B63;&#x5E38;</code></li>
+  <li>&#x901A;&#x8FC7;&#x5206;&#x6790;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5FAE;&#x8F6F;azure&#x865A;&#x62DF;&#x673A;&#x51FA;&#x4E86;&#x95EE;&#x9898;&#x3002;&#x5C06;&#x8BE5;&#x95EE;&#x9898;&#x53CD;&#x9988;&#x7ED9;&#x4E86;&#x5FAE;&#x8F6F;&#x7684;&#x5DE5;&#x7A0B;&#x5E08;&#x540E;&#xFF0C;&#x6211;&#x7684;&#x96BE;&#x9898;&#x6765;&#x4E86;&#xFF1A;&#x5FAE;&#x8F6F;&#x5DE5;&#x7A0B;&#x5E08;&#x9700;&#x8981;&#x6211;&#x63D0;&#x4F9B;&#x8FD9;&#x53F0;&#x865A;&#x62DF;&#x673A;&#x4E2D; /var/ &#x4E0B;&#x6240;&#x6709;log&#xFF0C;&#x4F9B;&#x4ED6;&#x4EEC;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;
+    <h3 id="&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;">
+      <a href="#&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;" class="headerlink" title="&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;"></a>&#x95EE;&#x9898;&#x6574;&#x7406;&#xFF1A;</h3>
+  </li>
+  <li>&#x5C06;&#x865A;&#x62DF;&#x673A;&#x4E0B;/var/&#x4E0B;&#x7684;&#x6240;&#x6709;log&#xFF0C;&#x6253;&#x5305;&#x5E76;&#x5BFC;&#x51FA;&#x81F3;&#x672C;&#x5730;&#xFF0C;&#x901A;&#x8FC7;&#x90AE;&#x4EF6;&#x63D0;&#x4F9B;&#x7ED9;&#x5FAE;&#x8F6F;&#x5DE5;&#x7A0B;&#x5E08;
+    <a id="more"></a>
+    <h3 id="&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#x5206;&#x4E09;&#x6B65;">
+      <a href="#&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#x5206;&#x4E09;&#x6B65;" class="headerlink" title="&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#x5206;&#x4E09;&#x6B65;:"></a>&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#x5206;&#x4E09;&#x6B65;:</h3>
+    <h4 id="&#xFF08;1&#xFF09;ssh&#x767B;&#x9646;">
+      <a href="#&#xFF08;1&#xFF09;ssh&#x767B;&#x9646;" class="headerlink" title="&#xFF08;1&#xFF09;ssh&#x767B;&#x9646;"></a>&#xFF08;1&#xFF09;ssh&#x767B;&#x9646;</h4>
+  </li>
+  <li>&#x7B49;&#x670D;&#x52A1;&#x5668;&#x81EA;&#x52A8;&#x6062;&#x590D;&#x6B63;&#x5E38;&#x540E;&#xFF0C;ssh&#x8F93;&#x5165;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#xFF0C;&#x767B;&#x9646;&#x6210;&#x529F;
+    <h4 id="&#xFF08;2&#xFF09;&#x6253;&#x5305;var&#x4E0B;&#x7684;&#x6240;&#x6709;log">
+      <a href="#&#xFF08;2&#xFF09;&#x6253;&#x5305;var&#x4E0B;&#x7684;&#x6240;&#x6709;log" class="headerlink" title="&#xFF08;2&#xFF09;&#x6253;&#x5305;var&#x4E0B;&#x7684;&#x6240;&#x6709;log"></a>&#xFF08;2&#xFF09;&#x6253;&#x5305;var&#x4E0B;&#x7684;&#x6240;&#x6709;log</h4>
+  </li>
+  <li>
+    <p>ssh&#x767B;&#x9646;&#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x627E;&#x5230;/var/log&#x76EE;&#x5F55;&#xFF1A;</p>
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td>
+          <td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/<span class="built_in">log</span></span><br><span class="line">ls</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+  <li>
+    <p>&#x53D1;&#x73B0;/var/log&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x65E5;&#x5FD7;&#x5F88;&#x591A;&#xFF0C;&#x4E8E;&#x662F;&#x51B3;&#x5B9A;&#x5C06;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x538B;&#x7F29;&#x6253;&#x5305;&#x4E3A;1&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+  </li>
+  <li>Google&#x5230;tar.gz&#x683C;&#x5F0F;&#x6253;&#x5305;&#x6574;&#x4E2A;&#x76EE;&#x5F55;&#x7684;&#x4EE3;&#x7801;&#xFF1A;
+    <figure class="highlight bash">
+      <table>
+        <tr>
+          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+          <td class="code"><pre><span class="line">sudo tar -zcvf archive-name.tar.gz directory-name</span><br></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
 </ul>
-<p>打包成功。</p>
-<h4 id="（3）导出gz文件至本地"><a href="#（3）导出gz文件至本地" class="headerlink" title="（3）导出gz文件至本地"></a>（3）导出gz文件至本地</h4><ul>
-<li>下载并安装<a href="https://filezilla-project.org/" target="_blank" rel="external">filezilla客户端</a></li>
-<li>打开filezilla客户端，操作顺序：<br><code>1.文件&gt;站点管理器&gt;新站点&gt;常规</code><br><code>2.主机名：公用虚拟 IP (VIP)地址 如 11.11.11.11</code><br><code>3.端口：输入端口号 如22</code><br><code>4.协议：选择“SFTP”</code><br><code>5.登陆类型：正常</code><br><code>6.用户名：密码：</code></li>
-<li>以上内容输入完成后，点击“连接”</li>
-<li>pwd命令查看远程站点当前工作目录</li>
-<li>在该目录下找到文件（log-02-16.tar.gz），双击进行下载<br>找到log-02-16.tar.gz，邮件给微软工程师，问题解决！</li>
+<p>&#x6253;&#x5305;&#x6210;&#x529F;&#x3002;</p>
+<h4 id="&#xFF08;3&#xFF09;&#x5BFC;&#x51FA;gz&#x6587;&#x4EF6;&#x81F3;&#x672C;&#x5730;">
+  <a href="#&#xFF08;3&#xFF09;&#x5BFC;&#x51FA;gz&#x6587;&#x4EF6;&#x81F3;&#x672C;&#x5730;" class="headerlink" title="&#xFF08;3&#xFF09;&#x5BFC;&#x51FA;gz&#x6587;&#x4EF6;&#x81F3;&#x672C;&#x5730;"></a>&#xFF08;3&#xFF09;&#x5BFC;&#x51FA;gz&#x6587;&#x4EF6;&#x81F3;&#x672C;&#x5730;</h4>
+<ul>
+  <li>&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5;<a href="https://filezilla-project.org/" target="_blank" rel="external">filezilla&#x5BA2;&#x6237;&#x7AEF;</a></li>
+  <li>&#x6253;&#x5F00;filezilla&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x64CD;&#x4F5C;&#x987A;&#x5E8F;&#xFF1A;<br><code>1.&#x6587;&#x4EF6;&gt;&#x7AD9;&#x70B9;&#x7BA1;&#x7406;&#x5668;&gt;&#x65B0;&#x7AD9;&#x70B9;&gt;&#x5E38;&#x89C4;</code><br><code>2.&#x4E3B;&#x673A;&#x540D;&#xFF1A;&#x516C;&#x7528;&#x865A;&#x62DF; IP (VIP)&#x5730;&#x5740; &#x5982; 11.11.11.11</code><br><code>3.&#x7AEF;&#x53E3;&#xFF1A;&#x8F93;&#x5165;&#x7AEF;&#x53E3;&#x53F7; &#x5982;22</code><br><code>4.&#x534F;&#x8BAE;&#xFF1A;&#x9009;&#x62E9;&#x201C;SFTP&#x201D;</code><br><code>5.&#x767B;&#x9646;&#x7C7B;&#x578B;&#xFF1A;&#x6B63;&#x5E38;</code><br><code>6.&#x7528;&#x6237;&#x540D;&#xFF1A;&#x5BC6;&#x7801;&#xFF1A;</code></li>
+  <li>&#x4EE5;&#x4E0A;&#x5185;&#x5BB9;&#x8F93;&#x5165;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x70B9;&#x51FB;&#x201C;&#x8FDE;&#x63A5;&#x201D;</li>
+  <li>pwd&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x7AD9;&#x70B9;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</li>
+  <li>&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;&#x6587;&#x4EF6;&#xFF08;log-02-16.tar.gz&#xFF09;&#xFF0C;&#x53CC;&#x51FB;&#x8FDB;&#x884C;&#x4E0B;&#x8F7D;<br>&#x627E;&#x5230;log-02-16.tar.gz&#xFF0C;&#x90AE;&#x4EF6;&#x7ED9;&#x5FAE;&#x8F6F;&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#xFF01;</li>
 </ul>
-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/24/linux-log-to-local/" data-id="cisvbm8ef000gluwwhihnf0pw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/24/linux-log-to-local/" data-id="cisvq05o3000ggwwweabnaok8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Filezilla/">Filezilla</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Log/">Log</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
