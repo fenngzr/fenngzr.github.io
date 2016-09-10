@@ -93,31 +93,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&#x901A;&#x8FC7;docker&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#x5185;&#x5B58;&#x7D27;&#x5F20;&#xFF0C;&#x5BFC;&#x81F4;&#x670D;&#x52A1;&#x5668;&#x6027;&#x80FD;&#x4E0B;&#x964D;&#xFF0C;&#x751A;&#x81F3;&#x5B95;&#x673A;&#x3002;<br>&#x53EF;&#x80FD;&#x7684;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x4F7F;&#x7528;docker&#x542F;&#x52A8;container&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF0C;&#x6BCF;&#x4E2A;container&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5F53;&#x67D0;&#x4E00;&#x4E2A;container&#x5185;&#x5B58;&#x6CC4;&#x9732;&#xFF0C;&#x6216;&#x8005;&#x5360;&#x7528;&#x5185;&#x5B58;&#x8FC7;&#x5927;&#xFF0C;&#x5C31;&#x628A;&#x670D;&#x52A1;&#x5668;&#x5185;&#x5B58;&#x90FD;&#x4F7F;&#x7528;&#x5B8C;&#x4E86;&#x3002;<br>
-  <a id="more"></a>
-</p>
+        <p>&#x901A;&#x8FC7;docker&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x4F1A;&#x51FA;&#x73B0;&#x5185;&#x5B58;&#x7D27;&#x5F20;&#xFF0C;&#x5BFC;&#x81F4;&#x670D;&#x52A1;&#x5668;&#x6027;&#x80FD;&#x4E0B;&#x964D;&#xFF0C;&#x751A;&#x81F3;&#x5B95;&#x673A;&#x3002;<br>&#x53EF;&#x80FD;&#x7684;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x4F7F;&#x7528;docker&#x542F;&#x52A8;container&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x5206;&#x914D;&#xFF0C;&#x6BCF;&#x4E2A;container&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5F53;&#x67D0;&#x4E00;&#x4E2A;container&#x5185;&#x5B58;&#x6CC4;&#x9732;&#xFF0C;&#x6216;&#x8005;&#x5360;&#x7528;&#x5185;&#x5B58;&#x8FC7;&#x5927;&#xFF0C;&#x5C31;&#x628A;&#x670D;&#x52A1;&#x5668;&#x5185;&#x5B58;&#x90FD;&#x4F7F;&#x7528;&#x5B8C;&#x4E86;&#x3002;<br><a id="more"></a></p>
 <p><img src="/2016/09/09/docker-memory-limit/docker1.png" alt="&#x9ED8;&#x8BA4;&#x5185;&#x5B58;"></p>
 <p>&#x53BB;<a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="external">Docker</a>&#x5B98;&#x7F51;&#xFF0C;&#x627E;&#x5230;&#x4E86;&#x9650;&#x5236;&#x5185;&#x5B58;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<h4 id="&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;">
-  <a href="#&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;" class="headerlink" title="&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;"></a>&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;</h4>
-<figure class="highlight plain">
-  <table>
-    <tr>
-      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
-      <td class="code"><pre><span class="line">docker run -it -m 10M --memory-swap 20M ubuntu:14.04 /bin/bash</span><br></pre></td>
-    </tr>
-  </table>
-</figure>
-<p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x9650;&#x5236;container&#x53EA;&#x80FD;&#x4F7F;&#x7528;10M&#x7684;&#x5185;&#x5B58;+10M&#x7684;swap&#x7A7A;&#x95F4;&#x3002;<br>&#x4F46;&#x6211;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;&#x62A5;&#x9519;&#xFF1A;<br>
-  <figure class="highlight plain">
-    <table>
-      <tr>
-        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
-        <td class="code"><pre><span class="line">WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.</span><br></pre></td>
-      </tr>
-    </table>
-  </figure>
-</p>
+<h4 id="&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;"><a href="#&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;" class="headerlink" title="&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;"></a>&#x4E00;&#x3001;-m&#x548C;&#x2013;memory-swap&#x547D;&#x4EE4;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -m 10M --memory-swap 20M ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x9650;&#x5236;container&#x53EA;&#x80FD;&#x4F7F;&#x7528;10M&#x7684;&#x5185;&#x5B58;+10M&#x7684;swap&#x7A7A;&#x95F4;&#x3002;<br>&#x4F46;&#x6211;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;&#x62A5;&#x9519;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.</span><br></pre></td></tr></table></figure></p>
 <p>&#x4F7F;&#x7528;docker ps&#x547D;&#x4EE4;&#x53D1;&#x73B0;&#xFF0C;container&#x6B63;&#x5E38;&#x8DD1;&#x8D77;&#x6765;&#x4E86;<br><img src="/2016/09/09/docker-memory-limit/docker2.png" alt="&#x9650;&#x5236;&#x5185;&#x5B58;"></p>
 <p>&#x4E3A;&#x4E86;&#x80FD;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x2013;memory-swap&#x547D;&#x4EE4;&#xFF0C;&#x627E;&#x4E86;&#x4E0B;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x9700;&#x8981;&#x91CD;&#x542F;&#x670D;&#x52A1;&#x5668;&#x624D;&#x80FD;&#x751F;&#x6548;<br><code>To enable memory and swap on system using GNU GRUB (GNU GRand Unified Bootloader), do the following:
 Log into Ubuntu as a user with sudo privileges.
@@ -128,21 +108,13 @@ Save and close the file.
 Update GRUB.
 $ sudo update-grub
 Reboot your system.</code><br>&#x91CD;&#x542F;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x91CD;&#x65B0;&#x8DD1;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#xFF0C;&#x53D1;&#x73B0;container&#x8DD1;&#x8D77;&#x6765;&#x4E86;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FC7;&#x4E86;&#x4E00;&#x4F1A;&#xFF0C;&#x5C31;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#x6302;&#x6389;&#x4E86;&#x3002;<br><img src="/2016/09/09/docker-memory-limit/docker3.png" alt="&#x505C;&#x6B62;&#x8FD0;&#x884C;"></p>
-<h4 id="&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;">
-  <a href="#&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;" class="headerlink" title="&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;"></a>&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;</h4>
-<figure class="highlight plain">
-  <table>
-    <tr>
-      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
-      <td class="code"><pre><span class="line">docker run -it -m 20M ubuntu:14.04 /bin/bash</span><br></pre></td>
-    </tr>
-  </table>
-</figure>
+<h4 id="&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;"><a href="#&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;" class="headerlink" title="&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;"></a>&#x4E8C;&#x3001;-m&#x547D;&#x4EE4;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -m 20M ubuntu:14.04 /bin/bash</span><br></pre></td></tr></table></figure>
 <p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x53EA;&#x4F7F;&#x7528;&#x4E86;-m&#x53C2;&#x6570;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x9650;&#x5B9A;&#x4E86;&#x8FD9;&#x4E2A;&#x5BB9;&#x5668;&#x53EA;&#x80FD;&#x4F7F;&#x7528;20M&#x7684;&#x5185;&#x5B58;&#x4EE5;&#x53CA;20M&#x7684;swap&#x5B58;&#x50A8;</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/09/docker-memory-limit/" data-id="cisvq05ms0000gwww076k07wd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/09/docker-memory-limit/" data-id="ciswwizij0003vqwwb19v0f3g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Memroy/">Memroy</a></li></ul>

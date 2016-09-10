@@ -90,20 +90,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;">
-  <a href="#&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;</h4>
-<ul>
-  <li>&#x5C06;&#x8001;&#x670D;&#x52A1;&#x5668;A&#x4E0A;&#x7684;&#x5341;&#x51E0;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x8FC1;&#x79FB;&#x81F3;&#x65B0;&#x670D;&#x52A1;&#x5668;B&#x4E0A;&#x3002;</li>
-  <li>A&#x76EE;&#x524D;nginx&#x7684;server name&#x4E3A;a.xxxxxxx.com&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;
-    <figure class="highlight plain">
-      <table>
-        <tr>
-          <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td>
-          <td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  a.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">        access_log /data/log/nginx/access.log;</span><br><span class="line">        error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">       location / {</span><br><span class="line">           proxy_pass http://localhost:4300;</span><br><span class="line">				        }</span><br><span class="line">        }</span><br></pre></td>
-        </tr>
-      </table>
-    </figure>
-  </li>
+        <h4 id="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;"><a href="#&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x60C5;&#x51B5;&#x8BF4;&#x660E;&#xFF1A;</h4><ul>
+<li>&#x5C06;&#x8001;&#x670D;&#x52A1;&#x5668;A&#x4E0A;&#x7684;&#x5341;&#x51E0;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x8FC1;&#x79FB;&#x81F3;&#x65B0;&#x670D;&#x52A1;&#x5668;B&#x4E0A;&#x3002;</li>
+<li>A&#x76EE;&#x524D;nginx&#x7684;server name&#x4E3A;a.xxxxxxx.com&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">        listen 0.0.0.0:80;</span><br><span class="line">        server_name  a.xxxxxxx.com;</span><br><span class="line"></span><br><span class="line">        access_log /data/log/nginx/access.log;</span><br><span class="line">        error_log /data/log/nginx/error.log;</span><br><span class="line"></span><br><span class="line">       location / {</span><br><span class="line">           proxy_pass http://localhost:4300;</span><br><span class="line">				        }</span><br><span class="line">        }</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
         
           <p class="article-more-link">
@@ -113,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/27/migrate-server/" data-id="cisvq05ot000zgwwwa0o6rnn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/27/migrate-server/" data-id="ciswwizjr000ovqwwlwgx5ej3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
@@ -152,19 +142,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;">
-  <a href="#1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;" class="headerlink" title="1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"></a>1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</h3>
-<ul>
-  <li>&#x5B89;&#x88C5;
-    <figure class="highlight plain">
-      <table>
-        <tr>
-          <td class="gutter"><pre><span class="line">1</span><br></pre></td>
-          <td class="code"><pre><span class="line">docker run --name some-redis -d redis</span><br></pre></td>
-        </tr>
-      </table>
-    </figure>
-  </li>
+        <h3 id="1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"><a href="#1-Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;" class="headerlink" title="1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;"></a>1.Docker&#x4E0B;Redis&#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x6D4B;&#x8BD5;</h3><ul>
+<li>&#x5B89;&#x88C5;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name some-redis -d redis</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
         
           <p class="article-more-link">
@@ -174,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/" data-id="cisvq05o6000jgwww60lxfhqs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/14/install-and-test-redis-nodejs-mongodb-in-docker/" data-id="ciswwizis0006vqwwwmuhkyyb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
@@ -213,20 +193,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;">
-  <a href="#&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;" class="headerlink" title="&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;"></a>&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;</h3>
-<h4 id="1-&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90-90&#xFF09;">
-  <a href="#1-&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90-90&#xFF09;" class="headerlink" title="1.&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90*90&#xFF09;"></a>1.&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90*90&#xFF09;</h4>
-<h4 id="2-&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90-90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;">
-  <a href="#2-&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90-90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;" class="headerlink" title="2.&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90*90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;"></a>2.&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90*90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;</h4>
-<h4 id="3-&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;1&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;2">
-  <a href="#3-&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;1&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;2" class="headerlink" title="3.&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;1&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;2"></a>3.&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;<code>1</code>&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;<code>2</code></h4>
-<h4 id="4-&#x4FDD;&#x5B58;2&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;">
-  <a href="#4-&#x4FDD;&#x5B58;2&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;" class="headerlink" title="4.&#x4FDD;&#x5B58;2&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;"></a>4.&#x4FDD;&#x5B58;<code>2</code>&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;</h4>
+        <h3 id="&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;"><a href="#&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;" class="headerlink" title="&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;"></a>&#x5C06;&#x4E00;&#x5F20;&#x65B9;&#x5F62;&#x56FE;&#xFF0C;&#x505A;&#x6210;&#x5706;&#x5F62;&#x56FE;&#xFF0C;&#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;</h3><h4 id="1-&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90-90&#xFF09;"><a href="#1-&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90-90&#xFF09;" class="headerlink" title="1.&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90*90&#xFF09;"></a>1.&#x4F7F;&#x7528;&#x692D;&#x5706;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x9009;&#x62E9;&#x6240;&#x9700;&#x5706;&#x5F62;&#xFF08;&#x6BD4;&#x5982;90*90&#xFF09;</h4><h4 id="2-&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90-90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;"><a href="#2-&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90-90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;" class="headerlink" title="2.&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90*90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;"></a>2.&#x65B0;&#x5EFA;&#x56FE;&#x5C42;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#xFF08;90*90&#xFF09;&#xFF0C;&#x80CC;&#x666F;&#x4E3A;&#x900F;&#x660E;</h4><h4 id="3-&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;1&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;2"><a href="#3-&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;1&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;2" class="headerlink" title="3.&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;1&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;2"></a>3.&#x4F7F;&#x7528;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#xFF0C;&#x5C06;<code>1</code>&#x9009;&#x62E9;&#x7684;&#x5706;&#x5F62;&#xFF0C;&#x76F4;&#x63A5;&#x62D6;&#x81F3;<code>2</code></h4><h4 id="4-&#x4FDD;&#x5B58;2&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;"><a href="#4-&#x4FDD;&#x5B58;2&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;" class="headerlink" title="4.&#x4FDD;&#x5B58;2&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;"></a>4.&#x4FDD;&#x5B58;<code>2</code>&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;PNG&#x5373;&#x53EF;</h4>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/01/about-ps-stuff/" data-id="cisvq05n70004gwwwpul772a3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/01/about-ps-stuff/" data-id="ciswwizib0001vqww9g0phiim" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Icon/">Icon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Photoshop/">Photoshop</a></li></ul>
